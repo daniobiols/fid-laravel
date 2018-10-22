@@ -34,7 +34,7 @@
       <h5>CONTACTO</h5>
       <br>
       <ul>
-        <li><a style="color: #fff; 	font-size: 15px" href="contacto.php"><p class="fuente-pie">Formulario de Contacto</p></a></li>
+        <li><a style="color: #fff; 	font-size: 15px" href="contact"><p class="fuente-pie">Formulario de Contacto</p></a></li>
       </ul>
     </div>
     <div class="footer">

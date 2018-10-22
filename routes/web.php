@@ -12,11 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::view('auth', 'auth')->middleware('auth');
 
 Auth::routes();
+
+Route::get('contact', 'ContactController@index');
+Route::get('products.product', 'ProductController@index');
+Route::get('faq', 'faqController@index');
+
+
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
