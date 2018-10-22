@@ -28,21 +28,31 @@
           </li>
         </ul>
       </div>
-        <!--Boton Buscar-->
-        <button type="button" class="icono-banner btn btn-light">
-          <img src="images/lupaLog.png" alt="">
-        </button>
-        <!--Boton Carrito-->
-        <button type="button" class="icono-banner btn btn-light">
-          <img src="images/carritoLog.png" alt="">
-        </button>
-        <!--Boton INICIAR SESION-->
-        <button type="button" class="icono-banner btn btn-light"  data-whatever="@getbootstrap">
-          <p>Login</p>
-        </button>
-        <!--Boton REGISTRARSE-->
-        <button type="button" class="icono-banner btn btn-light"  data-whatever="@getbootstrap">
-          <p>Registrate</p>
-        </button>
+      <!--Boton Buscar-->
+      <button type="button" class="icono-banner btn btn-light">
+        <img src="images/lupaLog.png" alt="">
+      </button>
+      <!--Boton Carrito-->
+      <button type="button" class="icono-banner btn btn-light">
+        <img src="images/carritoLog.png" alt="">
+      </button>
+      {{-- <!--Boton INICIAR SESION-->
+      <button type="button" class="icono-banner btn btn-light"  data-whatever="@getbootstrap">
+        <p>Login</p>
+      </button>
+      <!--Boton REGISTRARSE-->
+      <button type="button" class="icono-banner btn btn-light"  data-whatever="@getbootstrap">
+        <p>Registrate</p>
+      </button> --}}
+      @if (Route::has('login'))
+          <div class="top-right links">
+              @auth
+                  <a href="{{ url('/home') }}">Home</a>
+              @else
+                  <a href="{{ route('login') }}">Login</a>
+                  <a href="{{ route('register') }}">Register</a>
+              @endauth
+          </div>
+      @endif
   </div>
 </nav>

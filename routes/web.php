@@ -25,6 +25,4 @@ Route::get('faq', 'faqController@index');
 
 
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
