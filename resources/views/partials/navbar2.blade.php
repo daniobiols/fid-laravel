@@ -32,8 +32,12 @@
     <!--Botones= Buscar Carrito Usuario-->
 
       <!--Usuario Logueado-->
+      @auth
+        <a href="{{ url('/home') }}">Home</a>
+      
+
       <!--Boton Buscar-->
-      {{-- <button type="button" class="icono-banner btn btn-light">
+      <button type="button" class="icono-banner btn btn-light">
           <img src="images/lupaLog.png" alt="">
       </button>
       <!--Boton Carrito-->
@@ -55,10 +59,13 @@
           <br>
           <a class="dropdown-item fuente" href="logout.php">Cerrar Sesion</a>
         </div>
-      </div> --}}
+      </div>
 
 
       <!--Usuario NO Logueado-->
+      @else
+        
+       
 
         <!--Boton Buscar-->
         <button type="button" class="icono-banner btn btn-light">
@@ -72,10 +79,14 @@
         <!--Boton OPCIONES DE USUARIO (iniciar sesion - registrarse)-->
 
         <!--Boton INICIAR SESION-->
-        <button type="button" class="icono-banner btn btn-light"  data-whatever="@getbootstrap">
-          <p>Login</p>
+        <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">
+          {{-- <p>Login</p> --}}
+          <a href="{{ route('login') }}">Login</a>
         </button>
-        {{-- <div class="modal fade" id="loginModal" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="separador">
+
+        </div>
+        <div class="modal fade" id="loginModal" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -88,14 +99,21 @@
                 <form method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Correo Electrónico:</label>
-                    <input type="text" name='email' class="form-control" id="recipient-name" value=''>
+                    <input type="text" name='email' class="form-control" id="recipient-name" value='{{old('email')}}'>
+                    <?php if (isset($errores['email'])): ?>
                       <span style='color: red;'>
+                        <?=$errores['email'];?>
                       </span>
+                    <?php endif; ?>
+                  </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Contraseña:</label>
                     <input type="password" class="form-control" id="recipient-name" name='password'>
+                    <?php if (isset($errores['password'])): ?>
                       <span style='color: red;'>
+                        <?=$errores['password'];?>
                       </span>
+                    <?php endif; ?>
                   </div>
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="customCheck1" name='recordarme'>
@@ -110,13 +128,14 @@
               </div>
             </div>
           </div>
-        </div> --}}
+        </div>
         <!--Boton REGISTRARSE-->
-        <button type="button" class="icono-banner btn btn-light"  data-whatever="@getbootstrap">
-          <p>Registrate</p>
-          <!-- <img src="images/register.png" alt="Register"> -->
+        <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#registroModal" data-whatever="@getbootstrap">
+          {{-- <p>Registrate</p> --}}
+          <a href="{{ route('register') }}">Register</a>
+
         </button>
-        {{-- <div class="modal fade show" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade show" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -129,21 +148,30 @@
                 <form class="" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Nombre:</label>
-                    <input type="text" name='name' class="form-control" id="recipient-name" value=''>
+                    <input type="text" name='name' class="form-control" id="recipient-name" value='<?=$name?>'>
+                    <?php if (isset($errores['name'])): ?>
                       <span style='color: red;'>
+                        <?=$errores['name'];?>
                       </span>
+                    <?php endif; ?>
                   </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Correo Electrónico:</label>
-                    <input type="text" name='email' class="form-control" id="recipient-name" value=''>
+                    <input type="text" name='email' class="form-control" id="recipient-name" value='<?=$email?>'>
+                    <?php if (isset($errores['email'])): ?>
                       <span style='color: red;'>
+                        <?=$errores['email'];?>
                       </span>
+                    <?php endif; ?>
                   </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Contraseña:</label>
                     <input type="password" name='password' class="form-control" id="recipient-name" >
+                    <?php if (isset($errores['password'])): ?>
                       <span style='color: red;'>
+                        <?=$errores['password'];?>
                       </span>
+                    <?php endif; ?>
                   </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Confirmar Contraseña:</label>
@@ -156,8 +184,12 @@
               </div>
             </div>
           </div>
-        </div> --}}
-        <!-- </div>
-      </div> -->
+        </div>
+{{--         </div>
+      </div>
+      <?php } ?> --}}
+      @endauth 
+
+
   </div>
 </nav>

@@ -1,7 +1,7 @@
 <nav class=" clase row nav-color navbar navbar-expand-lg navbar-light bg-light">
   <!--Logo-->
   <div class="logo col-lg-2 col-md-2 col-sm-5 col-xs-4">
-    <a href="index.php"><img src="images/LOGO.png" alt=""></a>
+    <a href="/home"><img src="images/LOGO.png" alt=""></a>
   </div>
 
   <div class="clase col-lg-8 col-md-8 col-sm-5 col-xs-4">
@@ -12,10 +12,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link fuente" href="index.php">HOME <span class="sr-only">(current)</span></a>
+            <a class="nav-link fuente" href="/home">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fuente" href="products.product">SHOP ONLINE</a>
+            <a class="nav-link fuente" href="/products.product">SHOP ONLINE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fuente" href="">TIENDAS</a>
