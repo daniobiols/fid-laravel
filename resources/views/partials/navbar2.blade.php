@@ -34,7 +34,7 @@
       <!--Usuario Logueado-->
       @auth
         <a href="{{ url('/home') }}">Home</a>
-      
+
 
       <!--Boton Buscar-->
       <button type="button" class="icono-banner btn btn-light">
@@ -64,8 +64,8 @@
 
       <!--Usuario NO Logueado-->
       @else
-        
-       
+
+
 
         <!--Boton Buscar-->
         <button type="button" class="icono-banner btn btn-light">
@@ -185,9 +185,6 @@
             </div>
           </div>
         </div>
-{{--         </div>
-      </div>
-      <?php } ?> --}}
       @endauth 
 
 

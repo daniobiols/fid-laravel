@@ -19,12 +19,12 @@ class EntidadProductos extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('product_code');
-            $table->string('product_type');
             $table->string('size');
             $table->string('color');
             $table->float('price',6,2);
             $table->float('price_list',6,2);
             $table->softdeletes();
+            $table->tinyInteger('type_id')->unsigned()->index();
             $table->tinyInteger('category_id')->unsigned()->index();
             $table->tinyInteger('subcategory_id')->unsigned()->index();
         });
@@ -48,6 +48,12 @@ class EntidadProductos extends Migration
           $table->timestamps();
           $table->Integer('product_id')->unsigned()->index();
         });
+        Schema::create('types', function (Blueprint $table) {
+          $table->tinyIncrements('id');
+          $table->string('name');
+          $table->softdeletes();
+          $table->timestamps();
+        });
     }
 
     /**
@@ -61,5 +67,6 @@ class EntidadProductos extends Migration
         Schema::dropIfExists('categories');
         Schema::dropIfExists('subcategories');
         Schema::dropIfExists('images');
+        Schema::dropIfExists('types');
     }
 }
