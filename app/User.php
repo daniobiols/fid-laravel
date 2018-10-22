@@ -29,19 +29,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function genre()
-    {
-    	//return $this->belongsTo(Genre::class, 'foreing_key', 'id');
-    	return $this->belongsTo(Genre::class);
-    }
-
-    public function image()
-    {
-        return $this->hasOne(Image::class);
-    }
-
-    public function actors()
-    {
-    	//return $this->belongsToMany(Actor::class, 'tabla_de_relacion', 'foreing_key', 'id');
-    	return $this->belongsToMany(Actor::class);
 }
