@@ -20,9 +20,15 @@ Route::view('auth', 'auth')->middleware('auth');
 Auth::routes();
 
 Route::get('contact', 'ContactController@index');
-Route::get('products.product', 'ProductController@index');
 Route::get('faq', 'faqController@index');
-
-
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Rutas Productos
+Route::get('Admin/Products/Category', 'Admin\ProductController@showCategories');
+Route::get('Admin/Products', 'Admin\ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
