@@ -68,10 +68,17 @@
     </div>
 
 
+<<<<<<< HEAD
 {{-- /* ==================================================
       USUARIO NO LOGUEADO
 ================================================== */ --}}
     @else
+=======
+      <!--Usuario Logueado-->
+      @auth
+        <a href="{{ url('/home') }}">Home</a>
+
+>>>>>>> 6d028c0a825ef0539fd61b807c47084cb43ce862
 
     <form method="POST" action="{{ route('login') }}">
       @csrf
@@ -106,10 +113,17 @@
 
               <form method="post" enctype="multipart/form-data">
 
+<<<<<<< HEAD
                 <div class="form-group row">
                   <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                   <div class="col-md-6">
                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+=======
+      <!--Usuario NO Logueado-->
+      @else
+
+
+>>>>>>> 6d028c0a825ef0539fd61b807c47084cb43ce862
 
                       @if ($errors->has('email'))
                           <span class="invalid-feedback" role="alert">
@@ -260,7 +274,12 @@
               </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
+=======
+      @endauth 
+
+>>>>>>> 6d028c0a825ef0539fd61b807c47084cb43ce862
 
     </div>
   </div>
