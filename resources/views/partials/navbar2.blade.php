@@ -1,195 +1,268 @@
 <nav class=" clase row nav-color navbar navbar-expand-lg navbar-light bg-light">
-  <!--Logo-->
+{{-- /* ==================================================
+  LOGO
+================================================== */ --}}
   <div class="logo col-lg-2 col-md-2 col-sm-5 col-xs-4">
-    <a href="index.php"><img src="images/LOGO.png" alt=""></a>
+    <a href="/home"><img src="images/LOGO.png" alt=""></a>
   </div>
 
   <div class="clase col-lg-8 col-md-8 col-sm-5 col-xs-4">
-    <!--Menu Hamburguesa-->
-      <button class="botones-navbar navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+{{-- /* ==================================================
+      MENU HAMBURGUESA
+================================================== */ --}}
+    <button class="botones-navbar navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link fuente" href="/home">HOME <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fuente" href="/products">SHOP ONLINE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fuente" href="">TIENDAS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fuente" href="http://stylescout.blogspot.com/">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fuente" href="/faq">PREGUNTAS FRECUENTES</a>
+        </li>
+      </ul>
+    </div>
+{{-- /* ==================================================
+      USUARIO LOGUEADO
+================================================== */ --}}
+    @auth
+    <a href="{{ url('/home') }}">Home</a>
+{{-- /* ==================================================
+      BOTONES BUSCAR Y CARRITO
+================================================== */ --}}
+    <button type="button" class="icono-banner btn btn-light">
+        <img src="images/lupaLog.png" alt="">
+    </button>
+    <button type="button" class="icono-banner btn btn-light">
+      <img src="images/carritoLog.png" alt="">
+    </button>
+{{-- /* ==================================================
+          BOTONES PRINCIPAR DE USUARIO
+================================================== */ --}}
+    <div class="dropdown">
+{{-- /* ==================================================
+            OPCIONES DE USUARIO LOGUEDO
+================================================== */ --}}
+      <button class="icono-banner btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="images/usuarioLog.png" alt="">
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link fuente" href="index.php">HOME <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fuente" href="productos.php">SHOP ONLINE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fuente" href="">TIENDAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fuente" href="http://stylescout.blogspot.com/">BLOG</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fuente" href="preguntas_frecuentes.php">PREGUNTAS FRECUENTES</a>
-          </li>
-        </ul>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item fuente" href="">Mi cuenta</a>
+        <br>
+        <a class="dropdown-item fuente" href="">Administrador</a>
+        <br>
+        <a class="dropdown-item fuente" href="#">Mis compras</a>
+        <br>
+        <a class="dropdown-item fuente" href="{{ url('/logout') }}">Cerrar Sesion</a>
       </div>
+    </div>
 
-    <!--Botones= Buscar Carrito Usuario-->
 
-      <!--Usuario Logueado-->
-      @auth
-        <a href="{{ url('/home') }}">Home</a>
-      
+{{-- /* ==================================================
+      USUARIO NO LOGUEADO
+================================================== */ --}}
+    @else
 
-      <!--Boton Buscar-->
+    <form method="POST" action="{{ route('login') }}">
+      @csrf
+{{-- /* ==================================================
+            BOTONES BUSCAR Y CARRITO
+================================================== */ --}}
       <button type="button" class="icono-banner btn btn-light">
-          <img src="images/lupaLog.png" alt="">
+        <img src="images/lupaLog.png" alt="">
       </button>
-      <!--Boton Carrito-->
       <button type="button" class="icono-banner btn btn-light">
         <img src="images/carritoLog.png" alt="">
       </button>
-      <!--Botones Usuario-->
-      <div class="dropdown">
-        <!--Boton Desplegable Usuario-->
-        <button class="icono-banner btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="images/usuarioLog.png" alt="">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item fuente" href="perfil_usuario.php">Mi cuenta</a>
-          <br>
-          <a class="dropdown-item fuente" href="productos_abm.php">Administrador</a>
-          <br>
-          <a class="dropdown-item fuente" href="#">Mis compras</a>
-          <br>
-          <a class="dropdown-item fuente" href="logout.php">Cerrar Sesion</a>
-        </div>
+{{-- /* ==================================================
+            INICIAR SESION
+================================================== */ --}}
+      <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">
+        <a href="#">Login</a>
+      </button>
+      <div class="separador">
+
       </div>
+      <div class="modal fade" id="loginModal" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
 
+              <form method="post" enctype="multipart/form-data">
 
-      <!--Usuario NO Logueado-->
-      @else
-        
-       
+                <div class="form-group row">
+                  <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                  <div class="col-md-6">
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-        <!--Boton Buscar-->
-        <button type="button" class="icono-banner btn btn-light">
-          <img src="images/lupaLog.png" alt="">
-        </button>
-        <!--Boton Carrito-->
-        <button type="button" class="icono-banner btn btn-light">
-          <img src="images/carritoLog.png" alt="">
-        </button>
+                      @if ($errors->has('email'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                          </span>
+                      @endif
 
-        <!--Boton OPCIONES DE USUARIO (iniciar sesion - registrarse)-->
-
-        <!--Boton INICIAR SESION-->
-        <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">
-          {{-- <p>Login</p> --}}
-          <a href="{{ route('login') }}">Login</a>
-        </button>
-        <div class="separador">
-
-        </div>
-        <div class="modal fade" id="loginModal" tabindex="-1" role="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form method="post" enctype="multipart/form-data">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Correo Electrónico:</label>
-                    <input type="text" name='email' class="form-control" id="recipient-name" value='{{old('email')}}'>
-                    <?php if (isset($errores['email'])): ?>
-                      <span style='color: red;'>
-                        <?=$errores['email'];?>
-                      </span>
-                    <?php endif; ?>
                   </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="recipient-name" name='password'>
-                    <?php if (isset($errores['password'])): ?>
-                      <span style='color: red;'>
-                        <?=$errores['password'];?>
-                      </span>
-                    <?php endif; ?>
+                </div>
+
+                <div class="form-group row">
+                  <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                  <div class="col-md-6">
+                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                      @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                      @endif
                   </div>
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1" name='recordarme'>
-                    <label class="custom-control-label" for="customCheck1">Recordarme</label>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" name="logBtn" class="btn btn-primary">Iniciar Sesion</button>
-                    <br>
-                    <button type="button" class="btn btn-primary">Olvidé mi contraseña</button>
-                  </div>
-                </form>
-              </div>
+                </div>
+
+              <div class="form-group row mb-0">
+                <div class="col-md-8 offset-md-4">
+                  <button type="submit" class="btn btn-primary">
+                    {{ __('Login') }}
+                  </button>
+
+                  <a class="btn btn-link" href="{{ route('password.request') }}">
+                    {{ __('Forgot Your Password?') }}
+                  </a>
+                </div>
+               </div>
+
+              </form>
+
             </div>
           </div>
         </div>
-        <!--Boton REGISTRARSE-->
-        <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#registroModal" data-whatever="@getbootstrap">
-          {{-- <p>Registrate</p> --}}
-          <a href="{{ route('register') }}">Register</a>
+      </div>
+    </form>
 
-        </button>
-        <div class="modal fade show" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Registrarse</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form class="" method="post" enctype="multipart/form-data">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Nombre:</label>
-                    <input type="text" name='name' class="form-control" id="recipient-name" value='<?=$name?>'>
-                    <?php if (isset($errores['name'])): ?>
-                      <span style='color: red;'>
-                        <?=$errores['name'];?>
-                      </span>
-                    <?php endif; ?>
+
+{{-- ==================================================
+      REGISTRARSE
+================================================== --}}
+    <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#registroModal" data-whatever="@getbootstrap">
+      <a href="#">Register</a>
+    </button>
+
+    <div class="modal fade show" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Registrarse</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+          
+              <div class="card-body">
+
+                <form method="POST" action="{{ route('register') }}">
+                  @csrf
+
+                  <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                      @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                        @endif
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Correo Electrónico:</label>
-                    <input type="text" name='email' class="form-control" id="recipient-name" value='<?=$email?>'>
-                    <?php if (isset($errores['email'])): ?>
-                      <span style='color: red;'>
-                        <?=$errores['email'];?>
-                      </span>
-                    <?php endif; ?>
+
+                  <div class="form-group row">
+                    <label for="lastname" class="col-md-4 col-form-label text-md-right">Apellido</label>
+
+                    <div class="col-md-6">
+                      <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
+
+                      @if ($errors->has('lastname'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('lastname') }}</strong>
+                        </span>
+                      @endif
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Contraseña:</label>
-                    <input type="password" name='password' class="form-control" id="recipient-name" >
-                    <?php if (isset($errores['password'])): ?>
-                      <span style='color: red;'>
-                        <?=$errores['password'];?>
-                      </span>
-                    <?php endif; ?>
+
+                  <div class="form-group row">
+
+                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                      @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                      @endif
+                    </div>
+
                   </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Confirmar Contraseña:</label>
-                    <input type="password" name='rpassword' class="form-control" id="recipient-name">
+
+                  <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                      @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                      @endif
+                    </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="submit" name='regBtn' class="btn btn-primary">Crear una cuenta nueva</button>
+
+                  <div class="form-group row">
+                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                    <div class="col-md-6">
+                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                    </div>
                   </div>
+
+                  <div class="form-group row mb-0">
+                    <div class="col-md-6 offset-md-4">
+                      <button type="submit" class="btn btn-primary">
+                        {{ __('Register') }}
+                      </button>
+                    </div>
+                  </div>
+
                 </form>
               </div>
-            </div>
           </div>
         </div>
-{{--         </div>
       </div>
-      <?php } ?> --}}
-      @endauth 
 
-
+    </div>
   </div>
+  @endauth
 </nav>

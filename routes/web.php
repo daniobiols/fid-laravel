@@ -22,7 +22,12 @@ Auth::routes();
 Route::get('contact', 'ContactController@index');
 Route::get('products.product', 'ProductController@index');
 Route::get('faq', 'faqController@index');
+Route::get('logout', 'Auth\LoginController@logout');
 
+Route::get('login', 'StaticController@login')->name('login');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// probar rutas
+//Route::view('login', 'login')

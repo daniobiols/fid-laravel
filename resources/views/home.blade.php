@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('head')
+  <meta charset="utf-8">
+@endsection
+
 @section('title', 'Home')
 
 @section('main')
@@ -50,13 +54,13 @@
 
   <div class="container-boxes">
     <div class="box">
-      <a href="productos.php"><img class="box-img" src="./images/shop.jpg" alt=""> </a>
+      <a href=""><img class="box-img" src="./images/shop.jpg" alt=""> </a>
     </div>
     <div class="box">
-      <a href="productos.php"><img class="box-img" src="./images/tienda.jpg" alt=""></a>
+      <a href=""><img class="box-img" src="./images/tienda.jpg" alt=""></a>
     </div>
     <div class="box">
-      <a href="preguntas_frecuentes.php"><img class="box-img" src="./images/blog.jpg" alt=""></a>
+      <a href=""><img class="box-img" src="./images/blog.jpg" alt=""></a>
   	</div>
 	</div>
 @endsection
