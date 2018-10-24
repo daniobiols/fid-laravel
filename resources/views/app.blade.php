@@ -7,7 +7,7 @@
 			<!--Cabecera-->
 			<header class="main-header">
 		    <!--Menu navbar-->
-		    @include('partials.navbar2')
+		    @include('partials.navbar')
 				<!--Main-->
 				<main class="container">
 					@yield('main')

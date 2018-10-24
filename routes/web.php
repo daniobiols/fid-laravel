@@ -20,28 +20,23 @@ Route::view('auth', 'auth')->middleware('auth');
 Auth::routes();
 
 Route::get('contact', 'ContactController@index');
+
 Route::get('faq', 'faqController@index');
-<<<<<<< HEAD
+
 Route::get('logout', 'Auth\LoginController@logout');
-=======
-Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> 6d028c0a825ef0539fd61b807c47084cb43ce862
-
-Route::get('login', 'StaticController@login')->name('login');
-
-<<<<<<< HEAD
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// probar rutas
-//Route::view('login', 'login')
-=======
-// Rutas Productos
+// Route::get('login', 'StaticController@login')->name('login');
+
 Route::get('Admin/Products/Category', 'Admin\ProductController@showCategories');
+
 Route::get('Admin/Products', 'Admin\ProductController@index');
 // Route::get('products.product', 'ProductController@index');
 // Route::get('products.product', 'ProductController@index');
 // Route::get('products.product', 'ProductController@index');
 // Route::get('products.product', 'ProductController@index');
 // Route::get('products.product', 'ProductController@index');
->>>>>>> 6d028c0a825ef0539fd61b807c47084cb43ce862
+
+Route::get('profile', 'ProfileController@show');
+// Route::get('profile', 'ProfileController@show')->middleware('Authenticate');
