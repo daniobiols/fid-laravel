@@ -34,6 +34,10 @@
               <li class="list-group-item">{{$user->lastname}}</li>
               <li class="list-group-item" style="text-align: left;">Telefono</label></li>
               <li class="list-group-item">{{$user->telephone}}</li>
+              <li class="list-group-item" style="text-align: left;">Address</label></li>
+              <li class="list-group-item">{{$user->address}}</li>
+              <li class="list-group-item" style="text-align: left;">Pais</label></li>
+              <li class="list-group-item">{{$user->country}}</li>
             </ul>
           </div>
           <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">

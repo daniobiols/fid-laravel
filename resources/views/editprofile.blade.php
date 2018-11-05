@@ -49,6 +49,18 @@
               </div>
               <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->telephone}}" name="telephone">
             </div>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Nueva Direccion</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->address}}" name="address">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Nuevo Pais</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->country}}" name="country">
+            </div>
             <button type="submit" value="Submit">Guardar</button>
             <button type="button" value="Submit">Cancelar</button>
           </form>
