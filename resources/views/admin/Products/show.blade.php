@@ -3,12 +3,10 @@
 @section('title', 'Vista Productos')
 
 @section('main')
-
-<ul>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-</ul>
-
+	<ul>
+		<li>hola</li>
+		<li>hola2h6</li>
+		<li>hola3h6</li>
+		<li>hola4h6</li>
+	</ul>
 @endsection

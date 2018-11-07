@@ -1,8 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
+// use App\Http\Requests\ProductRequest;
+use App\Image;
+use App\Product;
+use App\SubCategory;
+use App\Category;
 use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -11,7 +17,7 @@ class ProductController extends Controller
     $products=
     Product::orderBy('name')->paginate(5);
 
-    return view('admin.Products.index',['products'=>$products]);
+    return view('admin.products.index',['products'=>$products]);
   }
 
   public function show(Product $product)
@@ -48,7 +54,7 @@ private function addImages($product)
       $src = $file ->store('products');
       Image::create([
         'src'=>$src,
-        'product_id' => $product->id;
+        'product_id' => $product->id
       ]);
     }
   }
