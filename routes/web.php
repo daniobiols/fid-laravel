@@ -30,6 +30,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 // section productos
 
 // Route::get('admin.products','Admin\ProductController@index');
@@ -40,7 +41,7 @@ Route::get('admin.products/{product}','Admin\ProductController@update');
 Route::put('admin.products/{product}/edit','Admin\ProductController@edit');
 Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
 
-
+Route::get('admin', 'AdminController@index')->middleware('auth');
 
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
