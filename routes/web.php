@@ -23,6 +23,8 @@ Route::get('contact', 'ContactController@index');
 
 Route::get('faq', 'faqController@index');
 
+Route::get('shops', 'shopsController@index');
+
 Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -4,12 +4,12 @@
 
 @section('main')
   <div class="fuente-pr container-cuestionario">
-		<div class="titulo-pr">
-			<h1>PREGUNTAS FRECUENTES</h1>
-		</div>
+		
     <a class="btn btn-primary btn-pr" data-toggle="collapse" href="#collapseProductos" role="button" aria-expanded="true" aria-controls="collapseProductos">
       <h2>PRODUCTO</h2>
     </a>
+    <br>
+    <br>
     <div class="collapse show" id="collapseProductos">
       <div class="card card-body">
         <h3>¿COMO SE MIDEN LOS ZAPATOS? </h3>
