@@ -34,22 +34,34 @@ Route::get('/home', 'HomeController@index')->name('home');
 // section productos
 
 // Route::get('admin.products','Admin\ProductController@index');
+
+Route::get('admin/products','Admin\ProductController@showCategories');
+Route::get('admin.products/{product}','Admin\ProductController@show');
+Route::get('admin.products/{product}/edit','Admin\ProductController@edit');
+Route::get('admin.products/{product}','Admin\ProductController@update');
+Route::put('admin.products/{product}/edit','Admin\ProductController@edit');
+Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
+//TEST
+Route::get('/queries/product', function () {
+	$product = \App\Product::find(1);
+	$cat = $product->category()->orderBy('name')->get();
+	// $actors = $movie->actors()
+	// 	->where('favorite_movie_id', 6)
+	// 	->orderBy('first_name')
+	// 	->get()
+	// ;
+	dd($cat->toArray());
+});
+Route::get('/queries/categories',function(){
+  $categorie = \App\Category::get();
+  // $cat = $categorie->orderBy('name')->get();
+  dd($categorie->toArray());
+});
 Route::get('admin/products/index','ProductController@index');
 Route::get('admin/products/show','ProductController@show');
-
-
-// Route::get('admin.products/{product}','Admin\ProductController@show');
-
-// Route::get('admin.products/{product}/edit','Admin\ProductController@edit');
-
-// Route::get('admin.products/{product}','Admin\ProductController@update');
-
-// Route::put('admin.products/{product}/edit','Admin\ProductController@edit');
-
-// Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
+Route::get('admin', 'AdminController@index')->middleware('auth');
 
 Route::get('admin', 'AdminController@index')->middleware('isAdmin');
-
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');

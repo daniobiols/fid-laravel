@@ -4,13 +4,13 @@
 
 @section('main')
 
-	@if (session()->has('message'))
+	{{-- @if (session()->has('message'))
 		<div class="alert alert-success">
 			{{ session()->get('message') }}
 		</div>
-	@endif
+	@endif --}}
 
-	<table class="table table-bordered table-striped">
+	{{-- <table class="table table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>Categoría</th>
@@ -21,21 +21,24 @@
 				<tr>
 					<td>{{ $key->name }}</td>
 					<td>
-						<a class="btn btn-primary" href="/admin/products/{{$key->id}}/edit">
+						{{-- <a class="btn btn-primary" href="/admin/products/{{$key->id}}/edit">
 							<span class="fa fa-pencil"></span>
-						</a>
-						<form action="/admin/products/{{$key->id}}" method="post">
-							@method('DELETE')
+						</a> --}}
+						{{-- <form action="/admin/products/{{$key->id}}" method="post">
+							{{-- @method('DELETE') --}}
 							@csrf
-							<button class="btn btn-danger">
+							@foreach ($category as $key)
+							{{	$key->name}}
+							@endforeach
+							{{-- <button class="btn btn-danger">
 								<span class="fa fa-trash"></span>
-							</button>
-						</form>
+							</button> --}}
+						{{-- </form>
 					</td>
 				</tr>
 			@endforeach
 		</tbody>
-	</table>
+	</table> --}} --}}
 
-	{{ $category->links() }}
+	{{ $category->links() }} --}}
 @endsection
