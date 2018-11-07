@@ -2,7 +2,7 @@
 {{-- /* ==================================================
   LOGO
 ================================================== */ --}}
-  <div class="logo col-lg-2 col-md-2 col-sm-5 col-xs-4">
+  <div class="logo col-lg-1 col-md-1 col-sm-5 col-xs-4">
     <a href="/home"><img src="images/LOGO.png" alt=""></a>
   </div>
 
@@ -22,7 +22,7 @@
           <a class="nav-link fuente" href="/products">SHOP ONLINE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fuente" href="">TIENDAS</a>
+          <a class="nav-link fuente" href="/shops">TIENDAS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fuente" href="http://stylescout.blogspot.com/">BLOG</a>
@@ -32,37 +32,42 @@
         </li>
       </ul>
     </div>
-{{-- /* ==================================================
-      USUARIO LOGUEADO
-================================================== */ --}}
+  </div>
+
+  <div class="clase col-lg-3 col-md-3 col-sm-5 col-xs-4">
+
+    {{-- /* ==================================================
+          USUARIO LOGUEADO
+    ================================================== */ --}}
     @auth
-{{-- /* ==================================================
-      BOTONES BUSCAR Y CARRITO
-================================================== */ --}}
+    {{-- /* ==================================================
+          BOTONES BUSCAR Y CARRITO
+    ================================================== */ --}}
     <button type="button" class="icono-banner btn btn-light">
         <img src="images/lupaLog.png" alt="">
     </button>
     <button type="button" class="icono-banner btn btn-light">
       <img src="images/carritoLog.png" alt="">
     </button>
-{{-- /* ==================================================
-          BOTONES PRINCIPAR DE USUARIO
-================================================== */ --}}
+
+    {{-- /* ==================================================
+              BOTONES PRINCIPAR DE USUARIO
+    ================================================== */ --}}
     <div class="dropdown">
-{{-- /* ==================================================
-            OPCIONES DE USUARIO LOGUEDO
-================================================== */ --}}
+      {{-- /* ==================================================
+                  OPCIONES DE USUARIO LOGUEDO
+      ================================================== */ --}}
       <button class="icono-banner btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="images/usuarioLog.png" alt="">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item fuente" href="{{ url('/profile') }}">Mi cuenta</a>
+        <a class="dropdown-item fuente-menu" href="{{ url('/profile') }}">Mi cuenta</a>
+        {{-- <br> --}}
+        {{-- <a class="dropdown-item fuente" href="">Administrador</a> --}}
         <br>
-        <a class="dropdown-item fuente" href="">Administrador</a>
+        <a class="dropdown-item fuente-menu" href="#">Mis compras</a>
         <br>
-        <a class="dropdown-item fuente" href="#">Mis compras</a>
-        <br>
-        <a class="dropdown-item fuente" href="{{ url('/logout') }}">Cerrar Sesion</a>
+        <a class="dropdown-item fuente-menu" href="{{ url('/logout') }}">Cerrar Sesion</a>
       </div>
     </div>
 
@@ -77,16 +82,16 @@
 {{-- /* ==================================================
             BOTONES BUSCAR Y CARRITO
 ================================================== */ --}}
-      <button type="button" class="icono-banner btn btn-light">
-        <img src="images/lupaLog.png" alt="">
-      </button>
-      <button type="button" class="icono-banner btn btn-light">
-        <img src="images/carritoLog.png" alt="">
-      </button>
+        <button type="button" class="icono-banner btn btn-light">
+          <img src="images/lupaLog.png" alt="">
+        </button>
+        <button type="button" class="icono-banner btn btn-light">
+          <img src="images/carritoLog.png" alt="">
+        </button>
 {{-- /* ==================================================
             INICIAR SESION
 ================================================== */ --}}
-      <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">
+      <button type="button" class="icono-banner btn-lr btn btn-light" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">
         <a href="#">Login</a>
       </button>
       <div class="separador">
@@ -158,7 +163,7 @@
 {{-- ==================================================
       REGISTRARSE
 ================================================== --}}
-    <button type="button" class="icono-banner btn btn-light" data-toggle="modal" data-target="#registroModal" data-whatever="@getbootstrap">
+    <button type="button" class="icono-banner btn-lr btn btn-light" data-toggle="modal" data-target="#registroModal" data-whatever="@getbootstrap">
       <a href="#">Registro</a>
     </button>
 
@@ -262,8 +267,8 @@
         </div>
 
       </div>
-
     </div>
-  </div>
+      
+    </div>
   @endauth
 </nav>

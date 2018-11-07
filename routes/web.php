@@ -23,11 +23,13 @@ Route::get('contact', 'ContactController@index');
 
 Route::get('faq', 'faqController@index');
 
+Route::get('shops', 'shopsController@index');
+
 Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('login', 'StaticController@login')->name('login');
+
 // section productos
 
 // Route::get('admin.products','Admin\ProductController@index');
@@ -39,8 +41,9 @@ Route::put('admin.products/{product}/edit','Admin\ProductController@edit');
 Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
 
 
+
 Route::get('profile', 'ProfileController@show')->middleware('auth');
-// Route::get('profile', 'ProfileController@show')->middleware('Authenticate');
 
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
+
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');

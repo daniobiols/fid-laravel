@@ -49,6 +49,11 @@ table {
 
 /*-------------------Fin Css reset----------------------*/
 
+.container-fluid{
+	padding-right: 0;
+	padding-left: 0;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -89,7 +94,8 @@ p {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
+	
 }
 
 .botones-navbar{
@@ -121,8 +127,16 @@ p {
 
 .fuente
 {
+	font-size: 35px;
+	/*font-family: "sudden";*/
+    font-family: 'Bangers', cursive;
+}
+
+.fuente-menu
+{
 	font-size: 20px;
-	font-family: "sudden";
+	/*font-family: "sudden";*/
+    font-family: 'Bangers', cursive;
 }
 /*
 .logo-mobile{
@@ -166,12 +180,20 @@ p {
 	height: 30px;
 }
 
+.btn-lr
+{
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+	color: black;
+	padding: 10px;
+}
+
 /* .carousel-item {
   width: 100%;
 } */
 
 .main-section {
-  margin: 10px 0;
+  margin: 15px 0;
   width: 100%;
   background-color: transparent;
 }
@@ -333,26 +355,29 @@ p {
 .fuente-pr
 {
 	font-size: 20px;
-	font-family: "sudden";
+	/*font-family: "sudden";*/
+    font-family: 'Bangers', cursive;
 }
 .container-cuestionario h2
 {
-	font-family: "sudden";
-
+    font-family: 'Bangers', cursive;
+	/*font-family: "sudden";*/
 	text-align: left;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .container-cuestionario h3
 {
-	font-family: "Montserrat";
+	margin-bottom: 11px;
+	margin-top: 11px;
+    font-family: 'Bangers', cursive;
 	text-align: left;
-	font-size: 18px;
+	font-size: 22px;
 }
 
 .container-cuestionario p
 {
-	font-family: "Montserrat";;
+	font-family: "Montserrat";
 	text-align: left;
 	font-size: 16px;
 }
@@ -392,10 +417,40 @@ p {
 }
 
 .fuente_formulario_usuario{
-  margin: 15px 0;
+  	margin: 15px 0;
 	font-size: 20px;
 	font-family: "sudden";
 
+}
+
+/* ------------------------------------------------TIENDAS / SHOPS*/
+.shop{
+ 	padding: 20px;
+}
+
+.shops{
+	display: flex;
+ 	flex-direction: column;
+ 	align-self: center;
+ 	padding: 0;
+}
+
+.shops img {
+	width: 100%;
+}
+
+.shops ul li
+{
+	font-size: 20px;
+    font-family: 'sudden';
+    padding-bottom: 5px;
+}
+
+.shops ul li h1
+{
+	font-size: 30px;
+    font-family: 'Bangers';
+    padding-bottom: 10px;
 }
 
 
