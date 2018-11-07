@@ -48,7 +48,7 @@ Route::get('admin/products/show','ProductController@show');
 
 // Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
 
-Route::get('admin', 'AdminController@index')->middleware('auth');
+Route::get('admin', 'AdminController@index')->middleware('isAdmin');
 
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
