@@ -59,9 +59,9 @@ Route::get('/queries/categories',function(){
 });
 Route::get('admin/products/index','ProductController@index');
 Route::get('admin/products/show','ProductController@show');
-
 Route::get('admin', 'AdminController@index')->middleware('auth');
 
+Route::get('admin', 'AdminController@index')->middleware('isAdmin');
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');

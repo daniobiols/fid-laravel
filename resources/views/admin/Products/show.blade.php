@@ -13,7 +13,8 @@
 @endsection
 =======
 
-<h1>{{ $Products->name }}</h1>
+{{-- <h1>{{ $Products->name }}</h1> --}}
+{{'Hola'}}
 
 
 @endsection
