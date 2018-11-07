@@ -27,7 +27,6 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
 
         </ol>
         <div class="carousel-inner">
@@ -36,10 +35,7 @@
   							<source src="./images/video.mp4" type="video/mp4">
   						</video>
   					</div> --}}
-  					<div class="carousel-item active">
-              <img class="d-block w-100" src="./images/fid01.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
+            <div class="carousel-item active">
               <img class="d-block w-100" src="./images/fid03.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
