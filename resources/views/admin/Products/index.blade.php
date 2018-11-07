@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @section('title', 'Products')
 
 @section('main')
@@ -24,4 +25,21 @@
     </form>
     <hr style="color: #0054b2;" />
 </div>
+=======
+@extends('app')
+
+@section('title', 'Listar Productos')
+
+@section('main')
+
+
+<ul>
+	@foreach ($products as $element)
+		<li>{{$element->name}}</li>
+		<li>{{$element->description}}</li>
+		<li>{{$element->product_code}}</li>
+	@endforeach
+</ul>
+
+>>>>>>> ea0784e3c1b5a636b894c0d74ca6988020bd347b
 @endsection

@@ -34,6 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // section productos
 
 // Route::get('admin.products','Admin\ProductController@index');
+
 Route::get('admin/products','Admin\ProductController@showCategories');
 Route::get('admin.products/{product}','Admin\ProductController@show');
 Route::get('admin.products/{product}/edit','Admin\ProductController@edit');
@@ -56,8 +57,8 @@ Route::get('/queries/categories',function(){
   // $cat = $categorie->orderBy('name')->get();
   dd($categorie->toArray());
 });
-
-
+Route::get('admin/products/index','ProductController@index');
+Route::get('admin/products/show','ProductController@show');
 
 Route::get('admin', 'AdminController@index')->middleware('auth');
 
