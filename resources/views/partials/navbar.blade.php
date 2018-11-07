@@ -61,13 +61,13 @@
         <img src="images/usuarioLog.png" alt="">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item fuente" href="{{ url('/profile') }}">Mi cuenta</a>
+        <a class="dropdown-item fuente-menu" href="{{ url('/profile') }}">Mi cuenta</a>
+        {{-- <br> --}}
+        {{-- <a class="dropdown-item fuente" href="">Administrador</a> --}}
         <br>
-        <a class="dropdown-item fuente" href="">Administrador</a>
+        <a class="dropdown-item fuente-menu" href="#">Mis compras</a>
         <br>
-        <a class="dropdown-item fuente" href="#">Mis compras</a>
-        <br>
-        <a class="dropdown-item fuente" href="{{ url('/logout') }}">Cerrar Sesion</a>
+        <a class="dropdown-item fuente-menu" href="{{ url('/logout') }}">Cerrar Sesion</a>
       </div>
     </div>
 

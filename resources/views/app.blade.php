@@ -8,6 +8,8 @@
 			<header class="main-header">
 		    <!--Menu navbar-->
 		    @include('partials.navbar')
+				<!--Content-->
+					@yield('content')
 				<!--Main-->
 				<main class="container">
 					@yield('main')

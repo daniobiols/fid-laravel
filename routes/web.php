@@ -29,19 +29,19 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('login', 'StaticController@login')->name('login');
+Route::get('admin', 'AdminController@index')->middleware('auth');
 
-Route::get('Admin/Products/Category', 'Admin\ProductController@showCategories');
+// Route::get('Admin/Products/Category', 'Admin\ProductController@showCategories');	
+// Route::get('Admin/Products', 'Admin\ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
+// Route::get('products.product', 'ProductController@index');
 
-Route::get('Admin/Products', 'Admin\ProductController@index');
-// Route::get('products.product', 'ProductController@index');
-// Route::get('products.product', 'ProductController@index');
-// Route::get('products.product', 'ProductController@index');
-// Route::get('products.product', 'ProductController@index');
-// Route::get('products.product', 'ProductController@index');
 
 Route::get('profile', 'ProfileController@show')->middleware('auth');
-// Route::get('profile', 'ProfileController@show')->middleware('Authenticate');
 
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
+
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');

@@ -49,6 +49,11 @@ table {
 
 /*-------------------Fin Css reset----------------------*/
 
+.container-fluid{
+	padding-right: 0;
+	padding-left: 0;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -123,6 +128,13 @@ p {
 .fuente
 {
 	font-size: 35px;
+	/*font-family: "sudden";*/
+    font-family: 'Bangers', cursive;
+}
+
+.fuente-menu
+{
+	font-size: 20px;
 	/*font-family: "sudden";*/
     font-family: 'Bangers', cursive;
 }

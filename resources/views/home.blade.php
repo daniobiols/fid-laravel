@@ -6,8 +6,8 @@
 
 @section('title', 'Home')
 
-@section('main')
-  <section class="banner-movile">
+@section('content')
+{{--   <section class="banner-movile">
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 
         <!--Carousel-->
   <section class="banner">
@@ -27,18 +27,26 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item">
+{{--             <div class="carousel-item">
   						<video loop class="d-block w-100" autoplay muted plays-inline autoplay poster="posterimage.jpg" alt="First slide">
   							<source src="./images/video.mp4" type="video/mp4">
   						</video>
-  					</div>
-  					<div class="carousel-item">
-  						<img class="d-block w-100" src="./images/banner01.jpg" alt="Second slide">
-  					</div>
-            <div class="carousel-item active">
-            	<img class="d-block w-100" src="./images/banner02.jpg" alt="Third slide">
+  					</div> --}}
+  					<div class="carousel-item active">
+              <img class="d-block w-100" src="./images/fid01.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="./images/fid03.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="./images/fid04.jpg" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="./images/fid05.jpg" alt="Fourth slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -51,6 +59,10 @@
         </a>
     </div>
   </section>
+@endsection
+
+
+@section('main')
 
   <div class="container-boxes">
     <div class="box">
