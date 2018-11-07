@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    Hola
-  </body>
-</html>
+@extends('app')
+
+@section('title', 'Listar Productos')
+
+@section('main')
+
+
+<ul>
+	@foreach ($products as $element)
+		<li>{{$element->name}}</li>
+		<li>{{$element->description}}</li>
+		<li>{{$element->product_code}}</li>
+	@endforeach
+</ul>
+
+@endsection

@@ -4,11 +4,7 @@
 
 @section('main')
 
-<ul>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-</ul>
+<h1>{{ $Products->name }}</h1>
+
 
 @endsection
