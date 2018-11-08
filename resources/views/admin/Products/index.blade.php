@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+{{-- 
 @section('title', 'Products')
 
 @section('main')
@@ -24,8 +24,8 @@
         <button type="button" class="btn btn-ttc">Send</button>
     </form>
     <hr style="color: #0054b2;" />
-</div>
-=======
+</div> --}}
+
 @extends('app')
 
 @section('title', 'Listar Productos')
@@ -41,5 +41,5 @@
 	@endforeach
 </ul>
 
->>>>>>> ea0784e3c1b5a636b894c0d74ca6988020bd347b
+
 @endsection
