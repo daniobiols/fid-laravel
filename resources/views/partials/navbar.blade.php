@@ -108,7 +108,7 @@
             </div>
             <div class="modal-body">
 
-              <form method="post" enctype="multipart/form-data">
+              <form id="log" method="post" enctype="multipart/form-data">
 
                 <div class="form-group row">
                   <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -184,14 +184,16 @@
 
               <div class="card-body">
 
-                <form method="POST" action="{{ route('register') }}">
+                <form id="reg" method="POST" action="{{ route('register') }}">
                   @csrf
 
                   <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                     <div class="col-md-6">
-                      <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                      <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}">
+                    
+                    <span class="invalidfeedback" role="alert" id="eNombre"></span>
 
                       @if ($errors->has('name'))
                         <span class="invalid-feedback" role="alert">
@@ -205,10 +207,13 @@
                     <label for="lastname" class="col-md-4 col-form-label text-md-right">Apellido</label>
 
                     <div class="col-md-6">
-                      <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
+                      <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}">
+
+                    <span class="invalidfeedback" role="alert" id="eLastname"></span>
+
 
                       @if ($errors->has('lastname'))
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" role="alert" id="eLastname">
                           <strong>{{ $errors->first('lastname') }}</strong>
                         </span>
                       @endif
@@ -220,10 +225,13 @@
                     <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                     <div class="col-md-6">
-                      <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                      <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}">
+
+                    <span class="invalidfeedback" role="alert" id="eCorreo"></span>
+
 
                       @if ($errors->has('email'))
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" role="alert" id="eMail">
                           <strong>{{ $errors->first('email') }}</strong>
                         </span>
                       @endif
@@ -235,10 +243,13 @@
                     <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                     <div class="col-md-6">
-                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password">
+
+                    <span class="invalidfeedback" role="alert" id="ePassword"></span>
+
 
                       @if ($errors->has('password'))
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback" role="alert" id="ePassword">
                           <strong>{{ $errors->first('password') }}</strong>
                         </span>
                       @endif
@@ -249,7 +260,10 @@
                     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                     <div class="col-md-6">
-                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+
+                    <span class="invalidfeedback" role="alert" id="eConfirm"></span>
+
                     </div>
                   </div>
 
@@ -272,3 +286,4 @@
     </div>
   @endauth
 </nav>
+

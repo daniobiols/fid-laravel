@@ -5,6 +5,7 @@
 @section('main')
 
 
+
 {{-- <h1>{{ $Products->name }}</h1> --}}
 {{'Hola'}}
 
