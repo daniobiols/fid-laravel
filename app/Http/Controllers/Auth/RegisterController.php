@@ -77,4 +77,20 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+/* -----------------------------------------INICIO LLAMADA AJAX/*/
+
+    protected function createAjax(Request $req)
+    {
+        dd('entro');
+        $data = $req->input('datos');
+        return User::create([
+            'name' => $data['name'],
+            'lastname' => $data['lastname'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
+    
+/* --------------------------------------------FIN LLAMADA AJAX/*/
+    
 }

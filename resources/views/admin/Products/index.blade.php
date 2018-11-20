@@ -5,7 +5,7 @@
 @section('main')
 
 
-<table class="table table-bordered table-striped">
+<table class="table-prod table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>Nombre</th>

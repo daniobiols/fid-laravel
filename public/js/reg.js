@@ -17,6 +17,7 @@ var eConfirm = document.querySelector('form#reg span#eConfirm');
 form.addEventListener("submit", function(event){
 
 	event.preventDefault();
+	
 
 	if(nombre.value == "" ){
 		eNombre.innerHTML = '<span class="invalidfeedback" role="alert" id="eNombre">COMPLETAME BIEN!</span>';
@@ -52,37 +53,37 @@ form.addEventListener("submit", function(event){
 		ePassword.innerHTML = '<span class="invalidfeedback" role="alert" id="ePassword">Las contraseñas no coinciden</span>';
 	}	
 
+
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
 
-
-	var campos = {
-		name: nombre.value,
-		lastname: lastname.value,
-		email: email.value,
-		password: password.value,
-	};
-
-	console.log(campos);
-
-	var data = new FormData();
-	data.append('datos', JSON.stringify(campos));
+	// var token = document.querySelector('[name=csrf-token]').getAttribute('content');
 
 
-	fetch('', {
-	   method: 'POST',
-	   body: data
-	})
-	.then(function(response) {
-	   if(response.ok) {
-	       return response.json()
-	   } 
-	   else {
-	       throw "Error en la llamada Ajax";
-	   }
-	})
-	.catch(function(error) {
-	   console.log(error);
-	});	
+	// var campos = {
+	// 	name: nombre.value,
+	// 	lastname: lastname.value,
+	// 	email: email.value,
+	// 	password: password.value,
+	// };
+
+	// var data = new FormData();
+	// data.append('datos', JSON.stringify(campos));
+
+
+	// fetch('http://127.0.0.1:8000/pruebaApi', {
+	//    method: 'POST',
+	//    body: data,
+	//    headers: {'X_CSRF-TOKEN': token}
+	// })
+	// .then(function(response) {
+	// 	return response.text()
+	// })
+	// .then(function(response) {
+	// 	console.log(response)
+	// })
+	// .catch(function(error) {
+	//    console.log(error);
+	// })
 
 /* --------------------------------------------FIN LLAMADA AJAX/*/
 

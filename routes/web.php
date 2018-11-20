@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,3 +69,14 @@ Route::get('profile', 'ProfileController@show')->middleware('auth');
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
 
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');
+/* -----------------------------------------INICIO LLAMADA AJAX/*/
+
+// Route::post('pruebaApi', function(Request $req){
+// 	return $req->input('datos');
+// 	// return $data;
+// });
+
+// Route::post('pruebaApi', 'RegisterController@createAjax');
+
+/* --------------------------------------------FIN LLAMADA AJAX/*/
+
