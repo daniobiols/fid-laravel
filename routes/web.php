@@ -60,10 +60,13 @@ Route::get('/queries/categories',function(){
   dd($categorie->toArray());
 });
 Route::get('admin/products/index','ProductController@index');
+
 Route::get('admin/products/show','ProductController@show');
+
 Route::get('admin', 'AdminController@index')->middleware('auth');
 
 Route::get('admin', 'AdminController@index')->middleware('isAdmin');
+
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
@@ -79,4 +82,8 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 // Route::post('pruebaApi', 'RegisterController@createAjax');
 
 /* --------------------------------------------FIN LLAMADA AJAX/*/
+
+Route::get('shopOnline', 'ShopOnlineController@show');
+
+
 

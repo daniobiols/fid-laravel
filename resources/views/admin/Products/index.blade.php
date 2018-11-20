@@ -5,13 +5,13 @@
 @section('main')
 
 
-<table class="table-prod table-bordered table-striped">
+<table class="table-prod table table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>Nombre</th>
 				<th>Marca</th>
 				<th>Codigo</th>
-				<th>Precio</th>
+				<th>Precio (ars)</th>
 				<th>Accion</th>
 			</tr>
 		</thead>

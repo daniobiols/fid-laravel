@@ -19,7 +19,7 @@
           <a class="nav-link fuente" href="/home">HOME <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fuente" href="/products">SHOP ONLINE</a>
+          <a class="nav-link fuente" href="/shopOnline">SHOP ONLINE</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fuente" href="/shops">TIENDAS</a>
@@ -43,6 +43,7 @@
     {{-- /* ==================================================
           BOTONES BUSCAR Y CARRITO
     ================================================== */ --}}
+    <input type="text" class="form-control search" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     <button type="button" class="icono-banner btn btn-light">
         <img src="images/lupaLog.png" alt="">
     </button>

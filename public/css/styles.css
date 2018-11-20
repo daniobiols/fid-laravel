@@ -66,10 +66,10 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
-@font-face {
+/*@font-face {
     font-family:"sudden";
     src: url(../fonts/sudden-desires/Sudden_Desires.ttf);
-}
+}*/
 
 p {
   font-family: 'Montserrat', sans-serif;
@@ -115,38 +115,17 @@ p {
   flex-direction: column;
 }
 
-/* .main-header h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 5em;
-}
-
-.main-header h2 {
-  font-family: 'Lato', sans-serif;
-  font-size: 1em;
-} */
-
 .fuente
 {
 	font-size: 35px;
-	/*font-family: "sudden";*/
     font-family: 'Bangers', cursive;
 }
 
 .fuente-menu
 {
 	font-size: 20px;
-	/*font-family: "sudden";*/
     font-family: 'Bangers', cursive;
 }
-/*
-.logo-mobile{
-	display: block;
-}
-
-.logo-mobile img{
-	width: 118px;
-	height: 50px;
-} */
 
 .logo{
 	display: none;
@@ -164,8 +143,6 @@ p {
 
 .banner {
 	display: none;
-  /* width: 100%;
-  margin: 10px auto; */
 }
 
 .icono-banner
@@ -188,18 +165,10 @@ p {
 	padding: 10px;
 }
 
-/* .carousel-item {
-  width: 100%;
-} */
-
 .main-section {
   margin: 15px 0;
   width: 100%;
   background-color: transparent;
-}
-
-.main-section h2{
-  /* font-family: 'Lato', sans-serif; */
 }
 
 .main-section article{
@@ -273,21 +242,12 @@ p {
 	z-index: 9999;
 	width: 100%;
 	height: 100%;
-	font-family: "Montserrat";
-	text-align: center;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.6);
-	border-radius: 2%;
+	border-radius: 2%;	
 }
 
 .box-img {
 	width: 100%;
 	border-radius: 2%;
-}
-
-.box-items span{
-	font-size: 50px;
-	font-family: "sudden";
 }
 
 /* -------------------------------------------------------------FOOTER*/
@@ -355,13 +315,11 @@ p {
 .fuente-pr
 {
 	font-size: 20px;
-	/*font-family: "sudden";*/
     font-family: 'Bangers', cursive;
 }
 .container-cuestionario h2
 {
     font-family: 'Bangers', cursive;
-	/*font-family: "sudden";*/
 	text-align: left;
 	font-size: 30px;
 }
@@ -412,15 +370,13 @@ p {
 /* ------------------------------------------------DATOS DEL USUARIO*/
 
 .formulario_usuario{
-  /* background-color:#fff; */
   padding: 10px;
 }
 
 .fuente_formulario_usuario{
   	margin: 15px 0;
 	font-size: 20px;
-	font-family: "sudden";
-
+	font-family: 'Montserrat', sans-serif;
 }
 
 /* ------------------------------------------------TIENDAS / SHOPS*/
@@ -442,7 +398,7 @@ p {
 .shops ul li
 {
 	font-size: 20px;
-    font-family: 'sudden';
+	font-family: 'Montserrat', sans-serif;
     padding-bottom: 5px;
 }
 
@@ -466,12 +422,17 @@ p {
 /* ------------------------------------------------PRODUCTOS/*/
 
 .table-prod {
-    width: 100%;
-    margin-bottom: 1rem;
-    background-color: transparent;
     margin-top: 1rem;
+    font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
 }
 
+/* ------------------------------------------------BUSQUEDA/*/
+
+
+.search{
+	width: 55%;
+}
 
 /*------------------------------------------------------
 ========================MEDIA===========================

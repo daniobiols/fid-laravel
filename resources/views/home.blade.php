@@ -62,7 +62,7 @@
 
   <div class="container-boxes">
     <div class="box">
-      <a href=""><img class="box-img" src="./images/shop.jpg" alt=""> </a>
+      <a href="shopOnline"><img class="box-img" src="./images/shop.jpg" alt=""> </a>
     </div>
     <div class="box">
       <a href=""><img class="box-img" src="./images/tienda.jpg" alt=""></a>
