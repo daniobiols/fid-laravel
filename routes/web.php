@@ -85,5 +85,8 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 
 Route::get('shopOnline', 'ShopOnlineController@show');
 
+Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
+
+
 
 

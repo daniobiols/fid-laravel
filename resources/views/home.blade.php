@@ -65,10 +65,10 @@
       <a href="shopOnline"><img class="box-img" src="./images/shop.jpg" alt=""> </a>
     </div>
     <div class="box">
-      <a href=""><img class="box-img" src="./images/tienda.jpg" alt=""></a>
+      <a class="nav-link fuente" href="/shops"><img class="box-img" src="./images/tienda.jpg" alt=""></a>
     </div>
     <div class="box">
-      <a href=""><img class="box-img" src="./images/blog.jpg" alt=""></a>
+      <a class="nav-link fuente" href="http://stylescout.blogspot.com/" target="_blank"><img class="box-img"  src="./images/blog.jpg" alt=""></a>
   	</div>
 	</div>
 @endsection

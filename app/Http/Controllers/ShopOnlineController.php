@@ -17,7 +17,14 @@ class ShopOnlineController extends Controller
   			->orderBy('name')
 			->paginate(5)
 		;
-  		// dd($products);
-	    return view('shopOnline', ['products'=>$products]);
+	    return view('products.shopOnline', ['products'=>$products]);
   	}
+
+  	public function prodView(Product $product)
+  	{
+  		// dd($product);
+	    return view('products/productView', ['product'=>$product]);
+  	}
+
+
 }

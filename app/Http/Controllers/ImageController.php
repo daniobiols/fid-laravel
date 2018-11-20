@@ -8,3 +8,7 @@ class ImageController extends Controller
 {
 
 }
+
+// $users = DB::table('users')
+//                 ->where('name', 'like', 'T%')
+//                 ->get();

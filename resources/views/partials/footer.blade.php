@@ -11,11 +11,31 @@
   </div>
   <div class="footer-media-bc">
     <ul class=" footer-smedia">
-      <li><img class="footer-img"src="./images/Facebook.png" alt=""></li>
-      <li><img class="footer-img"src="./images/Instagram.png" alt=""></li>
-      <li><img class="footer-img"src="./images/Pinterest.png" alt=""></li>
-      <li><img class="footer-img"src="./images/Twitter.png" alt=""></li>
-      <li><img class="footer-img"src="./images/YouTube.png" alt=""></li>
+      <li>
+        <a href="https://www.facebook.com" target="_blank">
+          <img class="footer-img"src="./images/Facebook.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com" target="_blank">
+          <img class="footer-img"src="./images/Instagram.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.pinterest.com" target="_blank">
+          <img class="footer-img"src="./images/Pinterest.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.twitter.com" target="_blank">
+          <img class="footer-img"src="./images/Twitter.png" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com" target="_blank">
+          <img class="footer-img"src="./images/YouTube.png" alt="">
+        </a>
+      </li>
     </ul>
   </div>
   <footer class="fuente-pie pie_pagina">

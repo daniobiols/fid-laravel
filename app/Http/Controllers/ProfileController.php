@@ -9,6 +9,6 @@ class ProfileController extends Controller
   public function show()
   {
     $user = \Auth::user();
-      return view('profile', ['user' => $user]);
+    return view('profile', ['user' => $user]);
   }
 }

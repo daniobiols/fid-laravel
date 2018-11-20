@@ -25,7 +25,7 @@
           <a class="nav-link fuente" href="/shops">TIENDAS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fuente" href="http://stylescout.blogspot.com/">BLOG</a>
+          <a class="nav-link fuente" href="http://stylescout.blogspot.com/" target="_blank">BLOG</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fuente" href="/faq">PREGUNTAS FRECUENTES</a>
