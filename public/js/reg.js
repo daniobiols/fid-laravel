@@ -16,27 +16,29 @@ var eConfirm = document.querySelector('form#reg span#eConfirm');
 
 form.addEventListener("submit", function(event){
 
-	event.preventDefault();
-	
-
 	if(nombre.value == "" ){
 		eNombre.innerHTML = '<span class="invalidfeedback" role="alert" id="eNombre">COMPLETAME BIEN!</span>';
+		event.preventDefault();
 	}else {eNombre.innerText = "";}
 
 	if(lastname.value == "" ){
 		eLastname.innerHTML = '<span class="invalidfeedback" role="alert" id="eLastname">COMPLETAME BIEN!</span>';
+		event.preventDefault();
 	}else {eLastname.innerText = "";}
 
 	if(email.value == "" ){
 		eCorreo.innerHTML = '<span class="invalidfeedback" role="alert" id="eCorreo">COMPLETAME BIEN!</span>';
+		event.preventDefault();
 	}else {eCorreo.innerText = "";}
 
 	if(password.value == "" ){
 		ePassword.innerHTML = '<span class="invalidfeedback" role="alert" id="ePassword">COMPLETAME BIEN!</span>';
+		event.preventDefault();
 	}else {ePassword.innerText = "";}
 
 	if(confirm.value == "" ){
 		eConfirm.innerHTML = '<span class="invalidfeedback" role="alert" id="eConfirm">COMPLETAME BIEN!</span>';
+		event.preventDefault();
 	}else {eConfirm.innerText = "";}
 
 	function validateEmail(value) 
@@ -47,10 +49,12 @@ form.addEventListener("submit", function(event){
 
 	if(validateEmail(email.value) == false){
 		eCorreo.innerHTML = '<span class="invalidfeedback" role="alert" id="eCorreo">Formato Incorrecto</span>';
+		event.preventDefault();
 	}
 
 	if(password.value!=confirm.value){
 		ePassword.innerHTML = '<span class="invalidfeedback" role="alert" id="ePassword">Las contraseñas no coinciden</span>';
+		event.preventDefault();
 	}	
 
 

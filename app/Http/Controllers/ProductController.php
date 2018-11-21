@@ -23,19 +23,21 @@ class ProductController extends Controller
     return view('admin.products.show',['product'=> $product]);
   }
 
-  public function edit (Product $product)
+  public function edit ($id)
   {
-    $categories = Category::orderBy('name')->get();
-    $subcategories = SubCategory :: orderby('name')->get();
-    $types = Type:: orderBy('name')->get();
+    // $categories = Category::orderBy('name')->get();
+    // $subcategories = SubCategory :: orderby('name')->get();
+    // $types = Type:: orderBy('name')->get();
 
-    $data = [
-      'product' => $product,
-      'categories'=> $categories,
-      'subcategories' => $subcategories,
-      'types' => $types
-    ];
-    return view('admin.products.edit',$data);
+    // $data = [
+    //   'product' => $product,
+    //   'categories'=> $categories,
+    //   'subcategories' => $subcategories,
+    //   'types' => $types
+    // ];
+
+    $product = Product::find($id);
+    return view('admin.products.edit',['product'=> $product]);
   }
 
   public function destroy(Product $product)
@@ -62,9 +64,28 @@ class ProductController extends Controller
   // {
   //
   // }
-    public function showCategories(Category $category)
-    {
-      return  view('Admin.Products.showCategories',['category'=>$category]);
-    }
+
+  public function showCategories(Category $category)
+  {
+    return  view('Admin.Products.showCategories',['category'=>$category]);
+  }
+
+  public function save (Request $request, $id)
+  {
+    $data = Product::find($id);
+
+    $data->fill([
+      'name' => $request->input('name'),
+      'description'=> $request->input('description'),
+      'product_code' => $request->input('product_code'),
+      'price' => $request->input('price'),
+    ]);
+
+    $data->save();
+
+    return redirect('admin/products/index');
+  }
+
+
 
 }

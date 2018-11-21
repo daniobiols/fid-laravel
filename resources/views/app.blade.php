@@ -2,22 +2,24 @@
 <html lang="{{ app()->getLocale() }}">
 @include('partials.head')
 @yield('head')
-  <body>
+	<body>
 		<div class="container-fluid contenedor">
 			<!--Cabecera-->
 			<header class="main-header">
 		    <!--Menu navbar-->
 		    @include('partials.navbar')
-				<!--Content-->
-					@yield('content')
-				<!--Main-->
-				<main class="container">
-					@yield('main')
-				</main>
-				<!--Pie de pagina-->
+			<!--Content-->
+			@yield('content')
+			<!--Main-->
+			<main class="container">
+				@yield('main')
+			</main>
+			<!--Pie de pagina-->
 		  	@include('partials.footer')
-				<!--Scripts-->
-				@include('partials.script')
+			<!--Scripts-->
+			@include('partials.script')
+			@yield('script')
+
 			</header>
 		</div>
 	</body>

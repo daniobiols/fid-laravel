@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -79,17 +80,17 @@ class RegisterController extends Controller
     }
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
 
-    protected function createAjax(Request $req)
-    {
-        dd('entro');
-        $data = $req->input('datos');
-        return User::create([
-            'name' => $data['name'],
-            'lastname' => $data['lastname'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+    // protected function createAjax(Request $req)
+    // {
+    //     dd('entro');
+    //     $data = $req->input('datos');
+    //     return User::create([
+    //         'name' => $data['name'],
+    //         'lastname' => $data['lastname'],
+    //         'email' => $data['email'],
+    //         'password' => Hash::make($data['password']),
+    //     ]);
+    // }
     
 /* --------------------------------------------FIN LLAMADA AJAX/*/
     

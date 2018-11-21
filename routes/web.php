@@ -38,10 +38,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('admin.products','Admin\ProductController@index');
 
 Route::get('admin/products','Admin\ProductController@showCategories');
-Route::get('admin.products/{product}','Admin\ProductController@show');
-Route::get('admin.products/{product}/edit','Admin\ProductController@edit');
-Route::get('admin.products/{product}','Admin\ProductController@update');
-Route::put('admin.products/{product}/edit','Admin\ProductController@edit');
+Route::get('admin.products/{product}','ProductController@show');
+Route::get('admin/products/{id}/edit','ProductController@edit');
+Route::get('admin.products/{product}','ProductController@update');
+Route::put('admin/products/{id}/edit','ProductController@save');
 Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
 //TEST
 Route::get('/queries/product', function () {
@@ -79,13 +79,16 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 // 	// return $data;
 // });
 
-// Route::post('pruebaApi', 'RegisterController@createAjax');
+// Route::post('pruebaApi', 'Auth\RegisterController@createAjax');
 
 /* --------------------------------------------FIN LLAMADA AJAX/*/
 
 Route::get('shopOnline', 'ShopOnlineController@show');
 
 Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
+
+Route::get('products/{product}/edit', 'ShopOnlineController@edit');
+
 
 
 

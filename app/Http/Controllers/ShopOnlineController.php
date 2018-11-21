@@ -22,9 +22,7 @@ class ShopOnlineController extends Controller
 
   	public function prodView(Product $product)
   	{
-  		// dd($product);
 	    return view('products/productView', ['product'=>$product]);
   	}
-
 
 }

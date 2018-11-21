@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Administrador')
+@section('title', 'Panel de Administrador')
 
 @section('main')
  <div>
