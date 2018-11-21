@@ -40,11 +40,12 @@ class ProductController extends Controller
     return view('admin.products.edit',['product'=> $product]);
   }
 
-  public function destroy(Product $product)
+  public function destroy(Request $request, $id)
   {
-    $product -> delete();
+    $data = Product::find($id);
+    $data -> delete();
     session()-> flash('messge','el producto se elimino con exito');
-    return redirect('admin/products')  ;
+    return redirect('admin/products/index');
   }
 
   // private function addImages($product)
@@ -79,6 +80,28 @@ class ProductController extends Controller
       'description'=> $request->input('description'),
       'product_code' => $request->input('product_code'),
       'price' => $request->input('price'),
+    ]);
+
+    $data->save();
+
+    return redirect('admin/products/index');
+  }
+
+  public function add ()
+  {
+    return view('admin/products/create');
+  }
+
+  public function create (Request $request)
+  {
+    $data = new Product;
+
+    $data->fill([
+      'name' => $request->input('name'),
+      'description'=> $request->input('description'),
+      'product_code' => $request->input('product_code'),
+      'price' => $request->input('price'),
+      'product_type' => $request->input('produtc_type'),
     ]);
 
     $data->save();

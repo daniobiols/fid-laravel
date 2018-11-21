@@ -7,6 +7,16 @@
 
 <table class="table-prod table table-bordered table-striped">
 		<thead>
+			<td>
+				<a href="/admin/products/create">
+					<button class="btn btn-success">
+						<span class="fa fa-trash">Crear nuevo producto</span>
+					</button>
+				</a>
+			</td>
+		</thead>
+		
+		<thead>
 			<tr>
 				<th>Nombre</th>
 				<th>Marca</th>

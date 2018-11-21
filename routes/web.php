@@ -42,7 +42,9 @@ Route::get('admin.products/{product}','ProductController@show');
 Route::get('admin/products/{id}/edit','ProductController@edit');
 Route::get('admin.products/{product}','ProductController@update');
 Route::put('admin/products/{id}/edit','ProductController@save');
-Route::delete('admin.products/{product}/edit','Admin\ProductController@destroy');
+Route::get('admin/products/create','ProductController@add');
+Route::post('admin/products/create','ProductController@create');
+Route::delete('admin/products/{id}','ProductController@destroy');
 //TEST
 Route::get('/queries/product', function () {
 	$product = \App\Product::find(1);
