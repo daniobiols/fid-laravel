@@ -31,40 +31,6 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-// section productos
-
-// Route::get('admin.products','Admin\ProductController@index');
-
-Route::get('admin/products','Admin\ProductController@showCategories');
-Route::get('admin.products/{product}','ProductController@show');
-Route::get('admin/products/{id}/edit','ProductController@edit');
-Route::get('admin.products/{product}','ProductController@update');
-Route::put('admin/products/{id}/edit','ProductController@save');
-Route::get('admin/products/create','ProductController@add');
-Route::post('admin/products/create','ProductController@create');
-Route::delete('admin/products/{id}','ProductController@destroy');
-//TEST
-Route::get('/queries/product', function () {
-	$product = \App\Product::find(1);
-	$cat = $product->category()->orderBy('name')->get();
-	// $actors = $movie->actors()
-	// 	->where('favorite_movie_id', 6)
-	// 	->orderBy('first_name')
-	// 	->get()
-	// ;
-	dd($cat->toArray());
-});
-Route::get('/queries/categories',function(){
-  $categorie = \App\Category::get();
-  // $cat = $categorie->orderBy('name')->get();
-  dd($categorie->toArray());
-});
-Route::get('admin/products/index','ProductController@index');
-
-Route::get('admin/products/show','ProductController@show');
-
 Route::get('admin', 'AdminController@index')->middleware('auth');
 
 Route::get('admin', 'AdminController@index')->middleware('isAdmin');
@@ -74,6 +40,53 @@ Route::get('profile', 'ProfileController@show')->middleware('auth');
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
 
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');
+
+
+
+// section productos
+Route::get('admin/products/{id}/edit','ProductController@edit');
+
+Route::put('admin/products/{id}/edit','ProductController@save');
+
+Route::get('admin/products/create','ProductController@add');
+
+Route::post('admin/products/create','ProductController@create');
+
+Route::delete('admin/products/{id}','ProductController@destroy');
+
+Route::get('admin/products/index','ProductController@index');
+
+Route::get('admin/products/show','ProductController@show');
+
+// shop online
+
+Route::get('shopOnline', 'ShopOnlineController@show');
+
+Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
+
+Route::get('products/{product}/edit', 'ShopOnlineController@edit');
+
+
+//TEST
+// Route::get('admin/products','Admin\ProductController@showCategories');
+// Route::get('admin.products/{product}','ProductController@show');
+// Route::get('admin.products/{product}','ProductController@update');
+// Route::get('/queries/product', function () {
+// 	$product = \App\Product::find(1);
+// 	$cat = $product->category()->orderBy('name')->get();
+// 	// $actors = $movie->actors()
+// 	// 	->where('favorite_movie_id', 6)
+// 	// 	->orderBy('first_name')
+// 	// 	->get()
+// 	// ;
+// 	dd($cat->toArray());
+// });
+// Route::get('/queries/categories',function(){
+//   $categorie = \App\Category::get();
+//   // $cat = $categorie->orderBy('name')->get();
+//   dd($categorie->toArray());
+// });
+
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
 
 // Route::post('pruebaApi', function(Request $req){
@@ -84,12 +97,6 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 // Route::post('pruebaApi', 'Auth\RegisterController@createAjax');
 
 /* --------------------------------------------FIN LLAMADA AJAX/*/
-
-Route::get('shopOnline', 'ShopOnlineController@show');
-
-Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
-
-Route::get('products/{product}/edit', 'ShopOnlineController@edit');
 
 
 
