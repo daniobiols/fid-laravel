@@ -101,7 +101,6 @@ class ProductController extends Controller
       'description'=> $request->input('description'),
       'product_code' => $request->input('product_code'),
       'price' => $request->input('price'),
-      'product_type' => $request->input('produtc_type'),
     ]);
 
     $data->save();

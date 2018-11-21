@@ -1,9 +1,11 @@
+{{-- @php $user = \Auth::user(); --}}
+
 <nav class=" clase row nav-color navbar navbar-expand-lg navbar-light bg-light">
 {{-- /* ==================================================
   LOGO
 ================================================== */ --}}
   <div class="logo col-lg-1 col-md-1 col-sm-5 col-xs-4">
-    <a href="/home"><img src="images/LOGO.png" alt=""></a>
+    <a href="/home"><img src="/images/LOGO.png" alt=""></a>
   </div>
 
   <div class="clase col-lg-8 col-md-8 col-sm-5 col-xs-4">
@@ -45,10 +47,10 @@
     ================================================== */ --}}
     <input type="text" class="form-control search" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     <button type="button" class="icono-banner btn btn-light">
-        <img src="images/lupaLog.png" alt="">
+        <img src="/images/lupaLog.png" alt="">
     </button>
     <button type="button" class="icono-banner btn btn-light">
-      <img src="images/carritoLog.png" alt="">
+      <img src="/images/carritoLog.png" alt="">
     </button>
 
     {{-- /* ==================================================
@@ -59,7 +61,7 @@
                   OPCIONES DE USUARIO LOGUEDO
       ================================================== */ --}}
       <button class="icono-banner btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src="images/usuarioLog.png" alt="">
+        <img src="/images/usuarioLog.png" alt="">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item fuente-menu" href="{{ url('/profile') }}">Mi cuenta</a>
@@ -84,10 +86,10 @@
             BOTONES BUSCAR Y CARRITO
 ================================================== */ --}}
         <button type="button" class="icono-banner btn btn-light">
-          <img src="images/lupaLog.png" alt="">
+          <img src="/images/lupaLog.png" alt="">
         </button>
         <button type="button" class="icono-banner btn btn-light">
-          <img src="images/carritoLog.png" alt="">
+          <img src="/images/carritoLog.png" alt="">
         </button>
 {{-- /* ==================================================
             INICIAR SESION

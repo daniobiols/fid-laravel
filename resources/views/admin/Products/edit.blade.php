@@ -1,4 +1,4 @@
-@extends('app')
+@extends('admin/appAdmin')
 
 @section('title', 'Editar Productos')
 

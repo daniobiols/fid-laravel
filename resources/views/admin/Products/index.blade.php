@@ -1,4 +1,4 @@
-@extends('app')
+@extends('admin/appAdmin')
 
 @section('title', 'Listar Productos')
 
@@ -33,14 +33,14 @@
 					<td>{{ $product->product_code }}</td>
 					<td>{{ $product->price }}</td>
 					<td>
-						<a class="btn btn-primary" href="/admin/products/{{$product->id}}/edit">
-							<span class="fa fa-pencil"></span>
+						<a class="btn btn-warning" href="/admin/products/{{$product->id}}/edit">
+							<span class="fa fa-pencil">editar</span>
 						</a>
 						<form action="/admin/products/{{$product->id}}" method="post">
 							@method('DELETE')
 							@csrf
 							<button class="btn btn-danger">
-								<span class="fa fa-trash"></span>
+								<span class="fa fa-trash">eliminar</span>
 							</button>
 						</form>
 					</td>
