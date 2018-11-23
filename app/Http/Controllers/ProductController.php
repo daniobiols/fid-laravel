@@ -84,31 +84,35 @@ class ProductController extends Controller
 
   public function create (Request $request )
   {
-
-    $data = new Product;
-
+    // dd($request->all());
+    $data = Product::create($request->all());
+    // dd($data);
+    // $dat
     // $categories = Category::orderBy('name')->get();
     // $subcategories = Subcategory :: orderby('name')->get();
     // $types = Type:: orderBy('name')->get();
 
-    $data->fill([
-      'name' => $request->input('name'),
-      'description'=> $request->input('description'),
-      'product_code' => $request->input('product_code'),
-      'price' => $request->input('price'),
-      'type_id' => $request->input('type_id'),
-      'size'=>$request->input('size'),
-      'color'=>$request->input('color'),
-      'is_popular'=>$request->input('is_popular'),
-      'price'=>$request->input('price'),
-      'price_list'=>$request->input('price_list'),
-      'quantity'=>$request->input('quantity'),
-      'description'=>$request->input('description'),
-      'category_id'=>$request->input('category_id'),
-      'subcategory_id'=>$request->input('subcategory_id')
-    ]);
 
-    $data->save();
+
+
+    // $data->fill([
+    //   'name' => $request->input('name'),
+    //   'description'=> $request->input('description'),
+    //   'product_code' => $request->input('product_code'),
+    //   'price' => $request->input('price'),
+    //   'type_id' => $request->input('type_id'),
+    //   'size'=>$request->input('size'),
+    //   'color'=>$request->input('color'),
+    //   'is_popular'=>$request->input('is_popular'),
+    //   'price'=>$request->input('price'),
+    //   'price_list'=>$request->input('price_list'),
+    //   'quantity'=>$request->input('quantity'),
+    //   'description'=>$request->input('description'),
+    //   'category_id'=>$request->input('category_id'),
+    //   'subcategory_id'=>$request->option('subcategory_id')
+    // ]);
+
+    // $data->save();
 
     return redirect('admin/products/index');
   }

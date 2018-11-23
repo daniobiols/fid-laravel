@@ -32,9 +32,10 @@
 	</table>
 </form> --}}
 
-<form class="" action="/admin/products" method="post" enctype="multipart/form-data">
+<form class="" action="/admin/products/create" method="post" enctype="multipart/form-data">
 	{{-- @method('PUT') --}}
 	@csrf
+
 	<div class="row table-prod">
 	   <div class="col-xs-4 item-photo">
 	        <img style="max-width:100%;" src="https://static.mercadoshops.com/vans-sk8-hi-negras_iZ992544310XvZgrandeXpZ1XfZ24509095-716890269-1XsZ24509095xIM.jpg" />
@@ -46,6 +47,8 @@
 						<input type="text" name="name" value="">
 						<label for="description">Descripcion </label>
 					 	<input type="text" name="description" value="">
+						<label for="product_code">Codigo de Producto </label>
+						<input type="text" name="product_code" value="">
 						<label for="type">Dirigido a</label>
 						<select class="" id="type" name="type_id">
 							@foreach ($types as $type)
