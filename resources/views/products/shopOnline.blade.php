@@ -22,7 +22,7 @@
       </div>
       <div class="card-footer">
         <small class="text-muted">
-         <a href="">Agregar al carrito</a>
+         <a href="/cart/add/{{$product->id}}">Agregar al carrito</a>
         </small>
        </div>
     </div>

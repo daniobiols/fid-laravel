@@ -49,9 +49,9 @@
     <button type="button" class="icono-banner btn btn-light">
         <img src="/images/lupaLog.png" alt="">
     </button>
-    <button type="button" class="icono-banner btn btn-light">
+    <a href="{{'/cart/show'}}"><button type="button" class="icono-banner btn btn-light">
       <img src="/images/carritoLog.png" alt="">
-    </button>
+    </button></a>
 
     {{-- /* ==================================================
               BOTONES PRINCIPAR DE USUARIO
@@ -68,7 +68,7 @@
         {{-- <br> --}}
         {{-- <a class="dropdown-item fuente" href="">Administrador</a> --}}
         <br>
-        <a class="dropdown-item fuente-menu" href="#">Mis compras</a>
+        <a class="dropdown-item fuente-menu" href="{{'/cart/show'}}">Mis compras</a>
         <br>
         <a class="dropdown-item fuente-menu" href="{{ url('/logout') }}">Cerrar Sesion</a>
       </div>

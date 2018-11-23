@@ -43,7 +43,7 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 
 
 
-// section productos
+// section productos Admin
 Route::get('admin/products/{id}/edit','ProductController@edit');
 
 Route::put('admin/products/{id}/edit','ProductController@save');
@@ -58,13 +58,21 @@ Route::get('admin/products/index','ProductController@index');
 
 Route::get('admin/products/show','ProductController@show');
 
-// shop online
+// section productos shop online
 
 Route::get('shopOnline', 'ShopOnlineController@show');
 
 Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
 
 Route::get('products/{product}/edit', 'ShopOnlineController@edit');
+
+// section carrito
+
+Route::get('cart/show', 'CartController@show');
+
+Route::get('cart/add/{product_id}', 'CartController@add');
+
+Route::delete('cart/delete/{id}','CartController@destroy');
 
 
 //TEST
