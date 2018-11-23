@@ -41,7 +41,7 @@ form.addEventListener("submit", function(event){
 		event.preventDefault();
 	}else {eConfirm.innerText = "";}
 
-	function validateEmail(value) 
+	function validateEmail(value)
 	{
 	   var re = /\S+@\S+\.\S+/;
 	   return re.test(value);
@@ -55,7 +55,7 @@ form.addEventListener("submit", function(event){
 	if(password.value!=confirm.value){
 		ePassword.innerHTML = '<span class="invalidfeedback" role="alert" id="ePassword">Las contraseñas no coinciden</span>';
 		event.preventDefault();
-	}	
+	}
 
 
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
@@ -92,4 +92,4 @@ form.addEventListener("submit", function(event){
 /* --------------------------------------------FIN LLAMADA AJAX/*/
 
 
-}); 
+});

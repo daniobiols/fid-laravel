@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Life+Savers:400,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Life+Savers:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
     <!-- Icono TAB -->
     <link rel="shortcut icon" href="images/icono.ico">

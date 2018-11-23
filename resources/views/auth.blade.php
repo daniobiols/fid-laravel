@@ -18,6 +18,6 @@
 		<p>Login</p>
 	@endauth
 
-	
+
 </body>
 </html>

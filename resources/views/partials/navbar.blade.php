@@ -195,7 +195,7 @@
 
                     <div class="col-md-6">
                       <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}">
-                    
+
                     <span class="invalidfeedback" role="alert" id="eNombre"></span>
 
                       @if ($errors->has('name'))
@@ -285,8 +285,7 @@
 
       </div>
     </div>
-      
+
     </div>
   @endauth
 </nav>
-

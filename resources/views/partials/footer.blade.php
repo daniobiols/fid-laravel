@@ -40,7 +40,7 @@
   </div>
   <footer class="fuente-pie pie_pagina">
     <div class="footer">
-      <h5>ACERDA DE FID</h5>
+      <h5>ACERCA DE FID</h5>
       <br>
       <ul>
         <li>Termino y condiciones</li>
@@ -64,6 +64,12 @@
         <li>consultas@dif.com.ar</li>
         <li>0800-222-3344</li>
       </ul>
+    </div>
+    <div class="tercero">
+      <button type="button" class="btn btn-dark dark">Dark</button>
+      <button type="button" class="btn btn-light light">Light</button>
+      <!-- <button class="dark">Dark</button>
+      <button class="light">Light</button> -->
     </div>
   </footer>
   <div class="copyright">

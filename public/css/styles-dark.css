@@ -86,7 +86,7 @@ p {
 .main-header{
   margin-top: 10px;
   width: 100%;
-  background-color: transparent;
+  background-color: gray;
   text-align: center;
 }
 
@@ -124,7 +124,7 @@ p {
 .fuente-menu
 {
 	font-size: 20px;
-  font-family: 'Bangers', cursive;
+    font-family: 'Bangers', cursive;
 }
 
 .logo{
@@ -270,7 +270,7 @@ p {
 .main-header{
   margin-top: 10px;
   width: 100%;
-  background-color: transparent;
+  background-color: gray;
   text-align: center;
 }
 
@@ -298,6 +298,7 @@ p {
 	display: flex;
 	padding: 5px;
 	justify-content: space-around;
+  background-color: gray;
 }
 
 .footer-smedia-bc
@@ -319,7 +320,7 @@ p {
 }
 
 .copyright{
-	background-color: white;
+	background-color: gray;
 	padding: 10px;
 	color: grey;
 	text-align: center;
