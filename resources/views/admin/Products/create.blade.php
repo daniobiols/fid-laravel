@@ -32,7 +32,7 @@
 	</table>
 </form> --}}
 
-<form class="" action="/admin/products/create" method="post" enctype="multipart/form-data">
+<form class="" action="/admin/products" method="post" enctype="multipart/form-data">
 	{{-- @method('PUT') --}}
 	@csrf
 	<div class="row table-prod">

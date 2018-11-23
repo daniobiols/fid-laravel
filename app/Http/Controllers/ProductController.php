@@ -74,7 +74,12 @@ class ProductController extends Controller
 
   public function add ()
   {
-    return view('admin/products/create');
+
+    $categories = Category::orderBy('name')->get();
+    $subcategories = Subcategory :: orderby('name')->get();
+    $types = Type:: orderBy('name')->get();
+
+    return view('admin/products/create', compact('categories','subcategories','types'));
   }
 
   public function create (Request $request )
@@ -82,9 +87,9 @@ class ProductController extends Controller
 
     $data = new Product;
 
-    $categories = Category::orderBy('name')->get();
-    $subcategories = Subcategory :: orderby('name')->get();
-    $types = Type:: orderBy('name')->get();
+    // $categories = Category::orderBy('name')->get();
+    // $subcategories = Subcategory :: orderby('name')->get();
+    // $types = Type:: orderBy('name')->get();
 
     $data->fill([
       'name' => $request->input('name'),
