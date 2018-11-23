@@ -43,18 +43,20 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 
 
 
-// section productos
-Route::get('admin/products/{id}/edit','ProductController@edit');
+// section productos corregidos
+Route::get('admin/products/index','ProductController@index');
+Route::delete('admin/products/{product}','ProductController@destroy');
 
-Route::put('admin/products/{id}/edit','ProductController@save');
+Route::get('admin/products/{product}/edit','ProductController@edit');
+Route::put('admin/products/{product}','ProductController@update');
+
+// Route::put('admin/products/{id}/edit','ProductController@save');
 
 Route::get('admin/products/create','ProductController@add');
 
 Route::post('admin/products/create','ProductController@create');
 
-Route::delete('admin/products/{id}','ProductController@destroy');
 
-Route::get('admin/products/index','ProductController@index');
 
 Route::get('admin/products/show','ProductController@show');
 
@@ -97,8 +99,3 @@ Route::get('products/{product}/edit', 'ShopOnlineController@edit');
 // Route::post('pruebaApi', 'Auth\RegisterController@createAjax');
 
 /* --------------------------------------------FIN LLAMADA AJAX/*/
-
-
-
-
-

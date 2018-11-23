@@ -1,21 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Product;
+use App\Image;
+use App\Subcategory;
+use App\Category;
+use App\Type;
+use App\Http\Requests\ProductRequest;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
 
-  public function index ()
+  public function index () //ok
   {
       $products = Product::whereNotNull('id')
       ->orderBy('name')
-      ->paginate(3)
-    ;
+      ->paginate(5);
     return view('admin.Products.index',['products'=>$products]);
-
   }
 
   public function show(Product $product)
@@ -23,68 +26,50 @@ class ProductController extends Controller
     return view('admin.products.show',['product'=> $product]);
   }
 
-  public function edit ($id)
+  public function destroy(Product $product)
   {
-    // $categories = Category::orderBy('name')->get();
-    // $subcategories = SubCategory :: orderby('name')->get();
-    // $types = Type:: orderBy('name')->get();
-
-    // $data = [
-    //   'product' => $product,
-    //   'categories'=> $categories,
-    //   'subcategories' => $subcategories,
-    //   'types' => $types
-    // ];
-
-    $product = Product::find($id);
-    return view('admin.products.edit',['product'=> $product]);
-  }
-
-  public function destroy(Request $request, $id)
-  {
-    $data = Product::find($id);
-    $data -> delete();
-    session()-> flash('messge','el producto se elimino con exito');
+    $product -> delete();
+    session()-> flash('message','el producto se eliminó con éxito');
     return redirect('admin/products/index');
   }
 
-  // private function addImages($product)
-  // {
-  //   if (request()->hasfile('images')) {
-  //     foreach (request()->file('iamges') as $file) {
-  //       $src = $file ->store('products');
-  //       Image::create([
-  //         'src'=>$src,
-  //         'product_id' => $product->id;
-  //       ]);
-  //     }
-  //   }
-  // }
-
-  // public function edit(Product $product)
-  // {
-  //
-  // }
-
-  public function showCategories(Category $category)
+  public function edit (Product $product)
   {
-    return  view('Admin.Products.showCategories',['category'=>$category]);
+    $categories = Category::orderBy('name')->get();
+    $subcategories = Subcategory :: orderby('name')->get();
+    $types = Type:: orderBy('name')->get();
+
+    $data = [
+      'product' => $product,
+      'categories'=> $categories,
+      'subcategories' => $subcategories,
+      'types' => $types
+    ];
+    return view('admin.products.edit',$data);
   }
 
-  public function save (Request $request, $id)
+  public function update(ProductRequest $request, Product $product)
   {
-    $data = Product::find($id);
+    $product->update($request->all());
 
-    $data->fill([
-      'name' => $request->input('name'),
-      'description'=> $request->input('description'),
-      'product_code' => $request->input('product_code'),
-      'price' => $request->input('price'),
-    ]);
+    $this->addImages($product);
 
-    $data->save();
+    session()->flash('message','El producto se edito con éxito');
 
     return redirect('admin/products/index');
+  }
+
+  public function addImages($product)
+  {
+    if (request()->hasFile('images')) {
+      foreach (request()->file('images') as $file) {
+        $src= $file->store('products');
+        Image::create([
+          'src' => $src,
+          'product_id'=> $product->id
+        ]);
+      }
+    }
   }
 
   public function add ()
@@ -92,15 +77,30 @@ class ProductController extends Controller
     return view('admin/products/create');
   }
 
-  public function create (Request $request)
+  public function create (Request $request )
   {
+
     $data = new Product;
+
+    $categories = Category::orderBy('name')->get();
+    $subcategories = Subcategory :: orderby('name')->get();
+    $types = Type:: orderBy('name')->get();
 
     $data->fill([
       'name' => $request->input('name'),
       'description'=> $request->input('description'),
       'product_code' => $request->input('product_code'),
       'price' => $request->input('price'),
+      'type_id' => $request->input('type_id'),
+      'size'=>$request->input('size'),
+      'color'=>$request->input('color'),
+      'is_popular'=>$request->input('is_popular'),
+      'price'=>$request->input('price'),
+      'price_list'=>$request->input('price_list'),
+      'quantity'=>$request->input('quantity'),
+      'description'=>$request->input('description'),
+      'category_id'=>$request->input('category_id'),
+      'subcategory_id'=>$request->input('subcategory_id')
     ]);
 
     $data->save();
@@ -108,6 +108,37 @@ class ProductController extends Controller
     return redirect('admin/products/index');
   }
 
+  //
+  // public function showCategories(Category $category)
+  // {
+  //   return  view('Admin.Products.showCategories',['category'=>$category]);
+  // }
+  //
+  // public function save (Request $request, $id)
+  // {
+  //   $data = Product::find($id);
+  //
+  //   $data->fill([
+  //     'name' => $request->input('name'),
+  //     'description'=> $request->input('description'),
+  //     'product_code' => $request->input('product_code'),
+  //     'price' => $request->input('price'),
+  //   ]);
+  //
+  //   $data->save();
+  //
+  //   return redirect('admin/products/index');
+  // }
+
+
+
+
+
+  //
+
+
+
+      // public function update(ProductRequest $request, Product $product)
 
 
 }
