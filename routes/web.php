@@ -41,24 +41,25 @@ Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
 
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');
 
+// section productos Admin
 
+Route::get('admin/products/index','ProductController@index');
 
-// section productos
-Route::get('admin/products/{id}/edit','ProductController@edit');
+Route::delete('admin/products/{product}','ProductController@destroy');
 
-Route::put('admin/products/{id}/edit','ProductController@save');
+Route::get('admin/products/{product}/edit','ProductController@edit');
+
+Route::put('admin/products/{product}','ProductController@update');
+
+// Route::put('admin/products/{id}/edit','ProductController@save');
 
 Route::get('admin/products/create','ProductController@add');
 
 Route::post('admin/products/create','ProductController@create');
 
-Route::delete('admin/products/{id}','ProductController@destroy');
-
-Route::get('admin/products/index','ProductController@index');
-
 Route::get('admin/products/show','ProductController@show');
 
-// shop online
+// section productos shop online
 
 Route::get('shopOnline', 'ShopOnlineController@show');
 
@@ -66,26 +67,14 @@ Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
 
 Route::get('products/{product}/edit', 'ShopOnlineController@edit');
 
+// section carrito
 
-//TEST
-// Route::get('admin/products','Admin\ProductController@showCategories');
-// Route::get('admin.products/{product}','ProductController@show');
-// Route::get('admin.products/{product}','ProductController@update');
-// Route::get('/queries/product', function () {
-// 	$product = \App\Product::find(1);
-// 	$cat = $product->category()->orderBy('name')->get();
-// 	// $actors = $movie->actors()
-// 	// 	->where('favorite_movie_id', 6)
-// 	// 	->orderBy('first_name')
-// 	// 	->get()
-// 	// ;
-// 	dd($cat->toArray());
-// });
-// Route::get('/queries/categories',function(){
-//   $categorie = \App\Category::get();
-//   // $cat = $categorie->orderBy('name')->get();
-//   dd($categorie->toArray());
-// });
+Route::get('cart/show', 'CartController@show');
+
+Route::get('cart/add/{product_id}', 'CartController@add');
+
+Route::delete('cart/delete/{id}','CartController@destroy');
+
 
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
 
@@ -97,8 +86,3 @@ Route::get('products/{product}/edit', 'ShopOnlineController@edit');
 // Route::post('pruebaApi', 'Auth\RegisterController@createAjax');
 
 /* --------------------------------------------FIN LLAMADA AJAX/*/
-
-
-
-
-
