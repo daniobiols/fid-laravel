@@ -18,7 +18,7 @@ class Purcharse extends Migration
           $table->softdeletes();
           $table->timestamps();
           $table->integer('user_id')->unsigned()->index();
-          $table->timestamp('transaction_date');
+          $table->timestamp('transaction_date')->nullable();
           $table->float('tax',6,2);
           $table->float('charge',6,2);
       });
@@ -30,7 +30,7 @@ class Purcharse extends Migration
           $table->integer('product_id')->unsigned()->index();
           $table->integer('quantity');
           $table->float('tax',6,2);
-          $table->float('unit_price',6,2)
+          $table->float('unit_price',6,2);
       });
     }
 
