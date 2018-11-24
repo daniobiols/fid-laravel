@@ -9,7 +9,7 @@
 @section('main')
 <div class="contenerdor_formulario_usuario">
 
-    <h1 class="fuente_formulario_usuario" id="id_contacto">Bienvendida {{ $user->name }}</h1>
+    <h1 class="col-12 fuente_formulario_usuario" id="id_contacto">Bienvendido {{ $user->name }}</h1>
 
     <div class="row">
       <div class="col-4">
@@ -44,19 +44,19 @@
             {{-- @include('partials.creditcard') --}}
             <form class="" action="index.html" method="post">
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="card-holder-name">Nombre en la tarjeta</label>
+                <label class="col-sm-4 control-label flota_campos" for="card-holder-name">Nombre en la tarjeta</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Nombre">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="card-number">Numero de la tarjeta</label>
+                <label class="col-sm-4 control-label flota_campos" for="card-number">Numero de la tarjeta</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Numero">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="expiry-month">Fecha de vencimiento</label>
+                <label class="col-sm-4 control-label flota_campos" for="expiry-month">Fecha de vencimiento</label>
                 <div class="col-sm-9">
                   <div class="row">
                     <div class="col-xs-3">
@@ -95,7 +95,7 @@
                 </div>
               </div>
               <div class="form-group">
-                {{-- <label class="col-sm-3 control-label" for="cvv">Codigo de Seguridad CVV</label> --}}
+                <label class="col-sm-4 control-label flota_campos" for="cvv">Codigo de Seguridad</label>
                 <div class="col-sm-3">
                   <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV">
                 </div>
@@ -103,7 +103,7 @@
             </form>
           </div>
           <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-            <button type="button" name="button">Eliminar Cuenta</button>
+            <button type="button" class="btn btn-secondary" name="button">Eliminar Cuenta</button>
           </div>
         </div>
       </div>

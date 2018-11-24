@@ -229,6 +229,24 @@ p {
 	margin: 6px auto;
 }
 
+.corrige_datos_facturacion{
+	margin: 0 0 0 20px;
+
+}
+
+.ancho_campo_fact{
+	width: 120px;
+}
+
+.flota_campos{
+	float: left;
+	margin: 0 0 5px -15px
+}
+
+.ancho_ivan{
+
+}
+
 .btn btn-ttc{
   margin-left: 10%;
   width: 20%;
@@ -330,11 +348,11 @@ p {
 .fuente-pr
 {
 	font-size: 20px;
-    font-family: 'Bangers', cursive;
+  font-family: 'Bangers', cursive;
 }
 .container-cuestionario h2
 {
-    font-family: 'Bangers', cursive;
+  font-family: 'Bangers', cursive;
 	text-align: left;
 	font-size: 30px;
 }
@@ -343,7 +361,7 @@ p {
 {
 	margin-bottom: 11px;
 	margin-top: 11px;
-    font-family: 'Bangers', cursive;
+  font-family: 'Bangers', cursive;
 	text-align: left;
 	font-size: 22px;
 }
@@ -390,7 +408,7 @@ p {
 
 .fuente_formulario_usuario{
   margin: 15px 0;
-	font-size: 20px;
+	font-size: 25px;
 	font-family: 'Montserrat', sans-serif;
 }
 

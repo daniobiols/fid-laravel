@@ -27,42 +27,42 @@
               @csrf
               <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-sm">Nuevo Email</span>
+                  <span class="input-group-text ancho_campo_fact" id="inputGroup-sizing-sm">Nuevo Email</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->email}}" name="email">
+                <input type="text" class="form-control corrige_datos_facturacion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->email}}" name="email">
               </div>
               <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nuevo Nombre</span>
+                <span class="input-group-text ancho_campo_fact" id="inputGroup-sizing-sm">Nuevo Nombre</span>
               </div>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->name}}" name="name">
+              <input type="text" class="form-control corrige_datos_facturacion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->name}}" name="name">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nuevo Apellido</span>
+                <span class="input-group-text ancho_campo_fact" id="inputGroup-sizing-sm">Nuevo Apellido</span>
               </div>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->lastname}}" name="lastname">
+              <input type="text" class="form-control corrige_datos_facturacion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->lastname}}" name="lastname">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nuevo Telefono</span>
+                <span class="input-group-text ancho_campo_fact" id="inputGroup-sizing-sm">Nuevo Telefono</span>
               </div>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->telephone}}" name="telephone">
+              <input type="text" class="form-control corrige_datos_facturacion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->telephone}}" name="telephone">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nueva Direccion</span>
+                <span class="input-group-text ancho_campo_fact" id="inputGroup-sizing-sm">Nueva Direccion</span>
               </div>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->address}}" name="address">
+              <input type="text" class="form-control corrige_datos_facturacion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->address}}" name="address">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Nuevo Pais</span>
+                <span class="input-group-text ancho_campo_fact" id="inputGroup-sizing-sm">Nuevo Pais</span>
               </div>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->country}}" name="country">
+              <input type="text" class="form-control corrige_datos_facturacion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->country}}" name="country">
             </div>
-            <button type="submit" value="Submit">Guardar</button>
-            <button type="button" value="Submit">Cancelar</button>
+            <button type="submit" class="btn btn-secondary" value="Submit">Guardar</button>
+            <button type="button" class="btn btn-secondary" value="Submit">Cancelar</button>
           </form>
           </div>
 
@@ -70,19 +70,19 @@
           <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
             <form class="" action="index.html" method="post">
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
+                <label class="col-sm-3 control-label flota_campos" for="card-holder-name">Name on Card</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="card-number">Card Number</label>
+                <label class="col-sm-3 control-label flota_campos" for="card-number">Card Number</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+                <label class="col-sm-3 control-label flota_campos" for="expiry-month">Expiration Date</label>
                 <div class="col-sm-9">
                   <div class="row">
                     <div class="col-xs-3">
@@ -121,13 +121,13 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-3 control-label" for="cvv">Card CVV</label>
+                <label class="col-sm-3 control-label flota_campos" for="cvv">Card CVV</label>
                 <div class="col-sm-3">
                   <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
                 </div>
               </div>
-              <button type="submit" value="Submit">Guardar</button>
-              <button type="button" value="Submit">Cancelar</button>
+              <button type="submit" class="btn btn-secondary" value="Submit">Guardar</button>
+              <button type="button" class="btn btn-secondary" value="Submit">Cancelar</button>
             </form>
           </div>
         </div>
