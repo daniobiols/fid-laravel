@@ -33,7 +33,8 @@ class CartController extends Controller
     	// dd($cart);
     	//actualizo variable de sesion
     	\Session::put('cart', $cart);
-    	return redirect()->route('home');
+    	return redirect('/cart/show');
+    	// return redirect()->route('cart.show',['cart'=> $cart]);
     }	
 
     public function destroy($id)
@@ -42,7 +43,7 @@ class CartController extends Controller
     	unset($cart[$id]);
     	\Session::put('cart', $cart);
 
-    	return redirect()->route('home');
+    	return redirect('cart/show');
 
   	}
 }
