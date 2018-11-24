@@ -75,6 +75,11 @@ Route::get('cart/add/{product_id}', 'CartController@add');
 
 Route::delete('cart/delete/{id}','CartController@destroy');
 
+//section purchase
+
+Route::get('purchase/index', 'PurchaseController@index');
+
+Route::get('purchase/add/{list}', 'PurchaseController@add');
 
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
 

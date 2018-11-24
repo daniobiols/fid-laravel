@@ -8,7 +8,7 @@
     <div class="footer">
       <h5>0810-123-4567</h5>
     </div class="footer">
-        <h5>consultas@dif.com.ar</h5>
+        <h5>consultas@fid.com.ar</h5>
     </div>
   </footer>
   <div class="copyright">
