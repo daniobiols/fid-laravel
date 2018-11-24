@@ -17,9 +17,9 @@ class EntidadProductos extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('description');
-            $table->string('trademark');
-            $table->string('product_code');
+            $table->string('description')->nullable();
+            $table->string('trademark')->nullable();
+            $table->string('product_code')->nullable();
             $table->string('size');
             $table->string('color');
             $table->float('price',6,2);

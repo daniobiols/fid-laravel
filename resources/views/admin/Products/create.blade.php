@@ -45,6 +45,9 @@
 					<input type="number" name="price" value="">
 					<label for="price_list">Precio de Lista </label>
 					<input type="number" name="price_list" value="">
+					{{-- marca --}}
+					<label for="color">Marca </label>
+					<input type="text" name="trademark" value="">
 	        <!-- Color del producto -->
 					<label for="color">Color </label>
 					<input type="text" name="color" value="">

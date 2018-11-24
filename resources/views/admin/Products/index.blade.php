@@ -25,6 +25,7 @@
 			<tr>
 				<th>Nombre</th>
 				<th>Dirigido a </th>
+				<th>Marca</th>
 				<th>Descripcion</th>
 				<th>Codigo</th>
 				<th>Categoria</th>
@@ -38,6 +39,7 @@
 				<tr>
 					<td>{{ $product->name }}</td>
 					<td>{{ $product->type->name }}</td>
+					<td>{{ $product->trademark }}</td>
 					<td>{{ $product->description }}</td>
 					<td>{{ $product->product_code }}</td>
 					<td>{{ $product->category->name }}</td>

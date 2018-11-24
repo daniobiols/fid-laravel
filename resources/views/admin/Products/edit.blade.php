@@ -54,6 +54,9 @@
 					<input type="number" name="price" value="{{ $product->price }}">
 					<label for="price_list">Precio de Lista </label>
 					<input type="number" name="price_list" value="{{ $product->price_list }}">
+					{{-- marca --}}
+						<label for="trademark">Marca </label>
+						<input type="text" name="trademark" value="{{ $product->trademark }}">
 	        <!-- Color del producto -->
 					<label for="color">Color </label>
 					<input type="text" name="color" value="{{ $product->color }}">
