@@ -17,13 +17,14 @@ class EntidadProductos extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('description');
-            $table->string('product_code');
+            $table->string('description')->nullable();
+            $table->string('trademark')->nullable();
+            $table->string('product_code')->nullable();
             $table->string('size');
             $table->string('color');
             $table->float('price',6,2);
             $table->float('price_list',6,2);
-            $table->Integer('quantity');
+            $table->integer('quantity');
             $table->softdeletes();
             $table->tinyInteger('type_id')->unsigned()->index();
             $table->tinyInteger('category_id')->unsigned()->index();
