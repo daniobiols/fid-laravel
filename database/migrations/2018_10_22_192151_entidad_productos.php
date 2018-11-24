@@ -23,7 +23,7 @@ class EntidadProductos extends Migration
             $table->string('color');
             $table->float('price',6,2);
             $table->float('price_list',6,2);
-            $table->Integer('quantity')
+            $table->Integer('quantity');
             $table->softdeletes();
             $table->tinyInteger('type_id')->unsigned()->index();
             $table->tinyInteger('category_id')->unsigned()->index();

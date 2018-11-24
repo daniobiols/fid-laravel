@@ -9,9 +9,8 @@ class AdminMiddelware
     public function handle($request, Closure $next)
     {
         if (!\Auth::user()->is_admin) {
-            return redirect('/admin');
+            return redirect('/home');;
         }
-
         return $next($request);
     }
 }
