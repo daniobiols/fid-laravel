@@ -41,9 +41,8 @@
     <tbody>
         <tr>
             <td>
-                <form action="/purchase/index" method="">
-                    {{-- @method('DELETE') --}}
-                    {{-- @csrf --}}
+                <form action="/purchase/create" method="post">
+                    @csrf
                     <button class="btn btn-info">Realizar Compra</button>
                 </form>
             </td>

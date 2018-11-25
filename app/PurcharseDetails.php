@@ -13,6 +13,6 @@ class PurcharseDetails extends Model
 
     public function purchases_detail()
     {
-    	return $this->belongsTo(Purchases::class);
+    	return $this->belongsTo(Purchase::class);
     }
 }
