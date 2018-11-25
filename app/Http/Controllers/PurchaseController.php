@@ -3,19 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Purchase;
 
 class PurchaseController extends Controller
 {
     public function index()
     {
-        return view('/purchase/index');
+        $cart = \Session::get('cart');
+        return view('purchase.index',['cart'=> $cart]);
     }
 
-    public function add($products)
+    public function add()
     {
-        $product = \Session::get('cart');
-        return redirect('/purchase/index', ['products' => $products]);
+        $user = \Auth::user();
+        $cart = \Session::get('cart');        
+        $purch = Purchase::create([
+            'user_id' => $user['id'],
+            'transaction_date' => $cart['created_at)'],
+            'tax' => 21,
+            'charge' => 1000,
+        ]);
+        dd($purch);
+        return redirect('/purchase/index');
     }
+
+    protected function create(array $data)
+    {
+        $user = \Auth::user();
+        $cart = \Session::get('cart');   
+        return Purchase::create([
+            'user_id' => $user['id'],
+            'transaction_date' => $cart['created_at)'],
+            'tax' => 21,
+            'charge' => 1000,
+        ]);
+    }
+
 
     /**
      * Store a newly created resource in storage.

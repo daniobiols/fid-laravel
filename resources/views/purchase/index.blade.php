@@ -1,10 +1,8 @@
 @extends('app')
 
-@section('title', 'Mis compras')
+@section('title', 'Mi compra')
 
 @section('main')
-
-{{-- {{ $product }} --}}
 
 
 <table class="table-prod table table-bordered table-striped">
@@ -25,11 +23,10 @@
         <th>Codigo</th>
         <th>Precio (ars)</th>
         <th>Cantidad</th>
-        <th>Accion</th>
     </tr>
     </thead>
         <tbody>
-           {{--  @foreach ($cart as $product)
+            @foreach ($cart as $product)
                 <tr>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->description }}</td>
@@ -37,14 +34,14 @@
                     <td>{{ $product->quant }}</td>
                     <td>{{ $product->price }}</td>
                 </tr>
-            @endforeach --}}
+            @endforeach
         </tbody>
     </thead>
 </table>
 <tbody>
     <tr>
         <td>
-            <a href="/"><button class="btn btn-info">Volver al Home</button></a>
+            <a href="/"><button class="btn btn-info" style="font-family: 'Montserrat', sans-serif;">Volver al Home</button></a>
         </td>
     </tr>
 </tbody>
