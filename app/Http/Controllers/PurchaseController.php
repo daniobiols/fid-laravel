@@ -13,13 +13,7 @@ class PurchaseController extends Controller
         return view('purchase.index',['cart'=> $cart]);
     }
 
-    public function add()
-    {
-        dd($purch);
-        return redirect('/purchase/index');
-    }
-
-    protected function create(array $data)
+    protected function create()
     {
         $user = \Auth::user();
         $cart = \Session::get('cart');   
