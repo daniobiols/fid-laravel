@@ -15,14 +15,6 @@ class PurchaseController extends Controller
 
     public function add()
     {
-        $user = \Auth::user();
-        $cart = \Session::get('cart');        
-        $purch = Purchase::create([
-            'user_id' => $user['id'],
-            'transaction_date' => $cart['created_at)'],
-            'tax' => 21,
-            'charge' => 1000,
-        ]);
         dd($purch);
         return redirect('/purchase/index');
     }

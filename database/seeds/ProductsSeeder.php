@@ -11,6 +11,10 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        //
+      \DB::table('products')->insert([
+       ['name' => 'Indumentaria'],
+       ['name' => 'Calzado'],
+       ['name' => 'Accesorios']
+     ]);
     }
 }
