@@ -51,13 +51,13 @@ Route::get('admin/products/{product}/edit','ProductController@edit');
 
 Route::put('admin/products/{product}','ProductController@update');
 
-// Route::put('admin/products/{id}/edit','ProductController@save');
-
 Route::get('admin/products/create','ProductController@add');
 
 Route::post('admin/products/create','ProductController@create');
 
 Route::get('admin/products/show','ProductController@show');
+//section abms
+Route::get('admin/abms','CategoryController@index');
 
 // section productos shop online
 
