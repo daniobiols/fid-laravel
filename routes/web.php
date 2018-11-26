@@ -37,6 +37,8 @@ Route::get('admin', 'AdminController@index')->middleware('isAdmin');
 
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
+Route::delete('profile/{id}','ProfileController@destroy');
+
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
 
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');
@@ -80,7 +82,7 @@ Route::get('admin/type/{type}/edit','AbmController@editType');
 
 // section productos shop online
 
-Route::get('shopOnline/', 'ShopOnlineController@show');
+Route::get('shopOnline', 'ShopOnlineController@show');
 
 Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
 
