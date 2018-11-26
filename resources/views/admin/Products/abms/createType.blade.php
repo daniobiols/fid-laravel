@@ -1,23 +1,17 @@
-@extends('app')
- @section('title', 'Crear Producto')
+@extends('admin.appAdmin')
+ @section('title', 'Crear Genero')
  @section('main')
- <form action="/admin/products/create" method="post">
+ <form action="/admin/type/create" method="post">
 	@csrf
 	<table class="table-prod table table-bordered table-striped">
 		<thead>
 			<tr>
-				<th>Nombre</th>
-				<th>Marca</th>
-				<th>Codigo</th>
-				<th>Precio (ars)</th>
+				<th>Tipo</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td><input name="name"></td>
-				<td><input name="description"></td>
-				<td><input name="product_code" ></td>
-				<td><input name="price"></td>
  				<td>
 					<button class="btn btn-success">
 						<span class="fa fa-trash">Guardar</span>

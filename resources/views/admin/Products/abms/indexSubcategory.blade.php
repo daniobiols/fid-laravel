@@ -1,6 +1,6 @@
 @extends('admin.appAdmin')
 
-@section('title', 'Listar Productos')
+@section('title', 'Listar SubCategorias')
 
 @section('main')
 	@include('admin.partials.script')

@@ -1,6 +1,6 @@
 @extends('admin.appAdmin')
 
-@section('title', 'Listar Productos')
+@section('title', 'Listar Generos')
 
 @section('main')
 	@include('admin.partials.script')
@@ -23,12 +23,12 @@
             <td>
               <div class="row">
                 <div class="col-sm-6">
-                  <a class="btn btn-warning" href="/admin/abms/{{$type->id}}/edit">
+                  <a class="btn btn-warning" href="/admin/type/{{$type->id}}/edit">
                     <span class="fa fa-pencil">editar</span>
                   </a>
                 </div>
                 <div class="col-sm-6">
-                  <form action="/admin/abms/{{$type->id}}" method="post">
+                  <form action="/admin/type/{{$type->id}}" method="post">
                     @method('DELETE')
                     @csrf
                     <button class="btn btn-danger">

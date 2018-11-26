@@ -44,17 +44,11 @@ Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->
 // section productos Admin
 
 Route::get('admin/products/index','ProductController@index');
-
 Route::delete('admin/products/{product}','ProductController@destroy');
-
 Route::get('admin/products/{product}/edit','ProductController@edit');
-
 Route::put('admin/products/{product}','ProductController@update');
-
 Route::get('admin/products/create','ProductController@add');
-
 Route::post('admin/products/create','ProductController@create');
-
 Route::get('admin/products/show','ProductController@show');
 
 // init section abms
@@ -74,7 +68,14 @@ Route::post('admin/type/create','AbmController@createType');
 Route::get('admin/category/create','AbmController@addCategory');
 Route::get('admin/subcategory/create','AbmController@addSubcategory');
 Route::get('admin/type/create','AbmController@addType');
-
+//update
+Route::put('admin/category/{category}','AbmController@updateCategory');
+Route::put('admin/subcategory/{subcategory}','AbmController@updateSubcategory');
+Route::put('admin/type/{type}','AbmController@updateType');
+//Edit
+Route::get('admin/category/{category}/edit','AbmController@editCategory');
+Route::get('admin/subcategory/{subcategory}/edit','AbmController@editSubcategory');
+Route::get('admin/type/{type}/edit','AbmController@editType');
 // end section abms
 
 // section productos shop online
