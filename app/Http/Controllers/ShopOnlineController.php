@@ -14,7 +14,7 @@ class ShopOnlineController extends Controller
 {
 	public function show()
   	{
-			$products=Product::whereNotNull('id')->orderBy('name')->paginate(5);
+			$products=Product::whereNotNull('id')->orderBy('name')->paginate(9);
 			return view('products.shopOnline',['products'=>$products]);
   	}
 

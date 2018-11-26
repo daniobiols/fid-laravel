@@ -56,8 +56,11 @@ Route::get('admin/products/create','ProductController@add');
 Route::post('admin/products/create','ProductController@create');
 
 Route::get('admin/products/show','ProductController@show');
+
 //section abms
-Route::get('admin/abms','CategoryController@index');
+Route::get('admin/category/index','AbmController@indexCategory');
+Route::get('admin/subcategory/index','AbmController@indexSubcategory');
+Route::get('admin/type/index','AbmController@indexType');
 
 // section productos shop online
 

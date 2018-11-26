@@ -10,25 +10,25 @@
 		</div>
 	@endif
   <table class="table-prod table table-bordered table-striped">
-  		<thead style="font-weight: bold"> Categorias
+  		<thead style="font-weight: bold"> tipos
   			<tr>
   				<th>Nombre</th>
           <th>Accciones</th>
   			</tr>
   		</thead>
   		<tbody>
-  			@foreach ($categories as $category)
+  			@foreach ($types as $type)
   				<tr>
-  					<td>{{ $category->name }}</td>
+  					<td>{{ $type->name }}</td>
             <td>
               <div class="row">
                 <div class="col-sm-6">
-                  <a class="btn btn-warning" href="/admin/abms/{{$category->id}}/edit">
+                  <a class="btn btn-warning" href="/admin/abms/{{$type->id}}/edit">
                     <span class="fa fa-pencil">editar</span>
                   </a>
                 </div>
                 <div class="col-sm-6">
-                  <form action="/admin/abms/{{$category->id}}" method="post">
+                  <form action="/admin/abms/{{$type->id}}" method="post">
                     @method('DELETE')
                     @csrf
                     <button class="btn btn-danger">
@@ -43,5 +43,5 @@
   		</tbody>
   	</table>
 
-  	{{ $categories->links() }}
+  	{{ $types->links() }}
 @endsection
