@@ -37,6 +37,8 @@ Route::get('admin', 'AdminController@index')->middleware('isAdmin');
 
 Route::get('profile', 'ProfileController@show')->middleware('auth');
 
+Route::delete('profile/{id}','ProfileController@destroy');
+
 Route::get('editprofile', 'EditProfileController@show')->middleware('auth');
 
 Route::post('editprofile', 'EditProfileController@update')->middleware('auth')->name('updateProfile');
@@ -56,30 +58,12 @@ Route::get('admin/products/create','ProductController@add');
 Route::post('admin/products/create','ProductController@create');
 
 Route::get('admin/products/show','ProductController@show');
-
-// init section abms
-// Index
-Route::get('admin/category/index','AbmController@indexCategory');
-Route::get('admin/subcategory/index','AbmController@indexSubcategory');
-Route::get('admin/type/index','AbmController@indexType');
-// Destroy
-Route::delete('admin/category/{category}','AbmController@destroyCategory');
-Route::delete('admin/subcategory/{subcategory}','AbmController@destroySubcategory');
-Route::delete('admin/type/{type}','AbmController@destroytype');
-//create
-Route::post('admin/category/create','AbmController@createCategory');
-Route::post('admin/subcategory/create','AbmController@createSubcategory');
-Route::post('admin/type/create','AbmController@createType');
-//Add
-Route::get('admin/category/create','AbmController@addCategory');
-Route::get('admin/subcategory/create','AbmController@addSubcategory');
-Route::get('admin/type/create','AbmController@addType');
-
-// end section abms
+//section abms
+Route::get('admin/abms','CategoryController@index');
 
 // section productos shop online
 
-Route::get('shopOnline/', 'ShopOnlineController@show');
+Route::get('shopOnline', 'ShopOnlineController@show');
 
 Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
 

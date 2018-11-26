@@ -9,15 +9,15 @@
 @section('main')
 <div class="contenerdor_formulario_usuario">
 
-    <h1 class="col-12 fuente_formulario_usuario" id="id_contacto">Bienvendido {{ $user->name }}</h1>
+    <h1 class="col-12 fuente_formulario_usuario" id="id_contacto">bienvendid@ {{ $user->name }}</h1>
 
     <div class="row" style="padding: 10px;">
       <div class="col-4">
         <div class="list-group fidTypo" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action  active fidTypo"  activeid="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Datos personales</a>
           {{-- <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Datos de Facturacion</a> --}}
-          <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Eliminar cuenta</a>
           <a class="list-group-item list-group-item-action" href="{{ url('/editprofile') }}">Editar Datos</a>
+          <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Eliminar cuenta</a>
         </div>
       </div>
       <div class="col-8">
@@ -108,14 +108,21 @@
             </form> --}}
           </div>
           <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                        <td>
-                <form action="/profile/delete/{{$user->id}}" method="post">
-                    @method('DELETE')
-                    @csrf
+            <form action="/profile/{{$user->id}}" method="post">
+                @method('DELETE')
+                @csrf
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item fidTypo" style="text-align: left;">¿Estas seguro de que desea eliminar su cuenta definitivamente?</li>
+                  <li class="list-group-item fidTypo">
                     <button class="btn btn-danger fidTypo">
-                        Eliminar Cuenta
+                     Eliminar Cuenta
                     </button>
-                </form>
+                  </li>
+                </ul>
+
+
+              </form>
             </td>
           </div>
         </div>

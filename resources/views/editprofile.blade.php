@@ -15,8 +15,8 @@
       <div class="col-4">
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action active fidTypo" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Editar Datos de usuario</a>
-          {{-- <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Datos personales</a> --}}
           <a class="list-group-item list-group-item-action fidTypo" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Editar Datos de Facturacion</a>
+          <a class="list-group-item list-group-item-action fidTypo" id="list-messages-list" data-toggle="list" href="/profile" role="tab" aria-controls="messages">Volver a mi cuenta</a>
         </div>
       </div>
       <div class="col-8">
@@ -27,42 +27,42 @@
               @csrf
               <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Nuevo Email</span>
+                  <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Email</span>
                 </div>
                 <input type="text" class="form-control corrige_datos_facturacion fidTypo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm fidTypo" value="{{$user->email}}" name="email">
               </div>
               <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Nuevo Nombre</span>
+                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Nombre</span>
               </div>
               <input type="text" class="form-control corrige_datos_facturacion fidTypo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm " value="{{$user->name}}" name="name">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Nuevo Apellido</span>
+                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Apellido</span>
               </div>
               <input type="text" class="form-control corrige_datos_facturacion fidTypo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->lastname}}" name="lastname">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Nuevo Telefono</span>
+                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm">Telefono</span>
               </div>
               <input type="text" class="form-control corrige_datos_facturacion fidTypo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->telephone}}" name="telephone">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm fidTypo fidTypo">Nueva Direcion</span>
+                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm fidTypo fidTypo">Direcion</span>
               </div>
               <input type="text" class="form-control corrige_datos_facturacion fidTypo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->address}}" name="address">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm fidTypo">Nuevo Pais</span>
+                <span class="input-group-text ancho_campo_fact fidTypo" id="inputGroup-sizing-sm fidTypo">Pais</span>
               </div>
               <input type="text" class="form-control corrige_datos_facturacion fidTypo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="{{$user->country}}" name="country">
             </div>
             <button type="submit" class="btn btn-secondary fidTypo" value="Submit">Guardar</button>
-            <a href="/profile"><button type="button" class="btn btn-secondary fidTypo" value="Submit">Cancelar</button></a>
+            <a href="/profile"><button type="button" class="btn btn-danger fidTypo" value="Submit">Cancelar</button></a>
           </form>
           </div>
 
@@ -128,7 +128,7 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-secondary fidTypo" value="Submit">Guardar</button>
-              <button type="button" class="btn btn-secondary fidTypo" value="Submit">Cancelar</button>
+              <a href="/profile"><button type="button" class="btn btn-danger fidTypo" value="Submit">Cancelar</button></a>
             </form>
           </div>
         </div>
