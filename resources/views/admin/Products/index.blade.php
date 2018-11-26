@@ -9,25 +9,26 @@
 			{{ session()->get('message') }}
 		</div>
 	@endif
-
-<table class="table-prod table table-bordered table-striped">
-		{{-- {{ dd($products) }} --}}
-		<thead>
-			<td>
+	<table class= "table-bordered table-striped">
+		<thead >
+			<th >
 				<a href="/admin/products/create">
 					<button class="btn btn-success">
 						<span class="fa fa-trash">Crear nuevo producto</span>
 					</button>
 				</a>
-			</td>
+			</th>
 		</thead>
+	</table>
 
-		<thead>
+<table class="table-prod table table-bordered table-striped" >
+		{{-- {{ dd($products) }} --}}
+		<thead >
 			<tr>
 				<th>Nombre</th>
 				<th>Dirigido a </th>
 				<th>Marca</th>
-				<th>Descripcion</th>
+				{{-- <th>Descripcion</th> --}}
 				<th>Codigo</th>
 				<th>Categoria</th>
 				<th>Sub Categoria</th>
@@ -41,7 +42,7 @@
 					<td>{{ $product->name }}</td>
 					<td>{{ $product->type->name }}</td>
 					<td>{{ $product->trademark }}</td>
-					<td>{{ $product->description }}</td>
+					{{-- <td>{{ $product->description }}</td> --}}
 					<td>{{ $product->product_code }}</td>
 					<td>{{ $product->category->name }}</td>
 					<td>{{ $product->subcategory->name }}</td>

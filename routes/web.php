@@ -57,10 +57,25 @@ Route::post('admin/products/create','ProductController@create');
 
 Route::get('admin/products/show','ProductController@show');
 
-//section abms
+// init section abms
+// Index
 Route::get('admin/category/index','AbmController@indexCategory');
 Route::get('admin/subcategory/index','AbmController@indexSubcategory');
 Route::get('admin/type/index','AbmController@indexType');
+// Destroy
+Route::delete('admin/category/{category}','AbmController@destroyCategory');
+Route::delete('admin/subcategory/{subcategory}','AbmController@destroySubcategory');
+Route::delete('admin/type/{type}','AbmController@destroytype');
+//create
+Route::post('admin/category/create','AbmController@createCategory');
+Route::post('admin/subcategory/create','AbmController@createSubcategory');
+Route::post('admin/type/create','AbmController@createType');
+//Add
+Route::get('admin/category/create','AbmController@addCategory');
+Route::get('admin/subcategory/create','AbmController@addSubcategory');
+Route::get('admin/type/create','AbmController@addType');
+
+// end section abms
 
 // section productos shop online
 

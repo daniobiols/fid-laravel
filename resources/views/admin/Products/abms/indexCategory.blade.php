@@ -23,12 +23,12 @@
             <td>
               <div class="row">
                 <div class="col-sm-6">
-                  <a class="btn btn-warning" href="/admin/abms/{{$category->id}}/edit">
+                  <a class="btn btn-warning" href="/admin/category/{{$category->id}}/edit">
                     <span class="fa fa-pencil">editar</span>
                   </a>
                 </div>
                 <div class="col-sm-6">
-                  <form action="/admin/abms/{{$category->id}}" method="post">
+                  <form action="/admin/category/{{$category->id}}" method="post">
                     @method('DELETE')
                     @csrf
                     <button class="btn btn-danger">
