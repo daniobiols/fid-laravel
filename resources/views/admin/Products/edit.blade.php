@@ -24,6 +24,8 @@
 					<div class="form-group " >
 		        <label class="" for="name">Nombre : </label>
 						<input class="" type="text" name="name" value="{{ $product->name }}">
+						<label for="product_code">Codigo de Producto </label>
+						<input type="text" name="product_code" value="{{ $product->product_code }}">
 					</div>
 					<div class="form-group">
 						<label for="description">Descripcion </label>
