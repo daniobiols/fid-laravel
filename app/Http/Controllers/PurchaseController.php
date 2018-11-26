@@ -33,7 +33,8 @@ class PurchaseController extends Controller
                 $detail = PurchaseDetails::create([
                     'product_id' => $item->id,
                     'purcharse_id' => $purch->id,
-                    'quantity' => 1,
+                    'quantity' => $item->quantity,
+                    // 'quantity' => request()->input('quantity'.$item->id),
                     'tax' => 21,
                     'unit_price' => $item->price,
                 ]);

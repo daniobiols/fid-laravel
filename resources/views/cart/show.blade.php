@@ -13,17 +13,17 @@
             <th>Codigo</th>
             <th>Precio (ars)</th>
             <th>Cantidad</th>
-            <th>Accion</th>
+            <th>Cantidad</th>
         </tr>
     </thead>
     <tbody>
     @foreach ($cart as $product)
         <tr>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->description }}</td>
+            <td>{{ $product->trademark }}</td>
             <td>{{ $product->product_code }}</td>
             <td>${{ $product->price }}</td>
-            <td><input style="width:70px" type="number" name="quantity" value=""></td>
+            <td><input style="width:70px" type="number" name="quantity{{$product->id}}" value="" ></td>
             <td>
                 <form action="/cart/delete/{{$product->id}}" method="post">
                     @method('DELETE')

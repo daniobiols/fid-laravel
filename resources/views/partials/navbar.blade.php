@@ -45,12 +45,11 @@
     {{-- /* ==================================================
           BOTONES BUSCAR Y CARRITO
     ================================================== */ --}}
-    <input type="text" class="form-control search" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     <button type="button" class="icono-banner btn btn-light">
         <img src="/images/lupaLog.png" alt="">
     </button>
     <a href="{{'/cart/show'}}"><button type="button" class="icono-banner btn btn-light">
-      <img src="/images/carritoLog.png" alt="">
+      <img style="margin-top: 9px;" src="/images/carritoLog.png" alt="">
     </button></a>
 
     {{-- /* ==================================================
