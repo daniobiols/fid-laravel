@@ -17,7 +17,7 @@ class ProductController extends Controller
   {
       $products = Product::whereNotNull('id')
       ->orderBy('name')
-      ->paginate(5);
+      ->paginate(10);
     return view('admin.Products.index',['products'=>$products]);
   }
 

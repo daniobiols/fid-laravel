@@ -12,13 +12,17 @@
   @foreach ($products as $product)
   <a href="products/productView/{{$product->id}}">
     <div class="card">
-      {{-- <img class="card-img-top" src="./images/prod_img/{{$image->src}}"> --}}
-      <img class="card-img-top" src="./images/prod_img/prod0001.jpg" alt="Card image cap">
+       @foreach ($product->image as $img)
+        <p>
+          <img class="card-img-top" src="/storage/{{$img->src}}">
+        </p>
+      @endforeach
       <div class="card-body">
         <h5 class="card-title">{{$product->name}}</h5>
         <h5 class="card-title">{{$product->description}}</h5>
         <p class="card-text">{{$product->talle}}</p>
-        <p class="card-text">${{$product->price}}</p>
+        <p class="card-text">{{$product->price}}</p>
+        {{-- <p>{{$product->image->src}}</p> --}}
       </div>
       <div class="card-footer">
         <small class="text-muted">
@@ -32,5 +36,5 @@
 <div class="table-prod">
   {{ $products->links() }}
 </div>
-  
+
 @endsection

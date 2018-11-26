@@ -1,8 +1,9 @@
-@extends('admin/appAdmin')
+@extends('admin.appAdmin')
 
 @section('title', 'Listar Productos')
 
 @section('main')
+	@include('admin.partials.script')
 	@if (session()->has('message'))
 		<div class="alert alert-sucess">
 			{{ session()->get('message') }}
