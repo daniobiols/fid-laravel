@@ -11,7 +11,7 @@
 	@endif
 	<table class= "table-bordered table-striped">
 		<thead >
-			<th">
+			<th>
 				<a href="/admin/products/create">
 					<button class="btn btn-success">
 						<span class="fa fa-trash fidTypo">Crear nuevo producto</span>

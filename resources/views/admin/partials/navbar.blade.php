@@ -19,9 +19,9 @@
         <li class="nav-item active">
           <a class="nav-link fuente" href="/admin">Panel de Control <span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active">
+        {{-- <li class="nav-item active">
           <a class="nav-link fuente" href="/admin/products/index">Volver a la lista <span class="sr-only"></span></a>
-        </li>
+        </li> --}}
       </ul>
     </div>
   </div>
