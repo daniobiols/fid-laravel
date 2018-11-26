@@ -408,8 +408,13 @@ p {
 
 .fuente_formulario_usuario{
   margin: 15px 0;
-	font-size: 25px;
-	font-family: 'Montserrat', sans-serif;
+	font-size: 40px;
+	font-family: 'Bangers', cursive;
+}
+
+.list-group-item.active{
+	background-color: rgba(0, 0, 0, 0.6);
+	border-color: rgba(0, 0, 0, 0.6);
 }
 
 /* ------------------------------------------------TIENDAS / SHOPS*/
@@ -465,6 +470,11 @@ p {
 
 .search{
 	width: 55%;
+}
+
+/* ------------------------------------------------FID Tipografia/*/
+.fidTypo{
+	font-family: 'Montserrat', sans-serif;
 }
 
 /*------------------------------------------------------

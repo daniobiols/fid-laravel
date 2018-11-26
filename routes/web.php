@@ -79,7 +79,7 @@ Route::get('admin/type/create','AbmController@addType');
 
 // section productos shop online
 
-Route::get('shopOnline', 'ShopOnlineController@show');
+Route::get('shopOnline/', 'ShopOnlineController@show');
 
 Route::get('products/productView/{product}', 'ShopOnlineController@prodView');
 
@@ -98,6 +98,8 @@ Route::delete('cart/delete/{id}','CartController@destroy');
 Route::get('purchase/index', 'PurchaseController@index');
 
 Route::post('purchase/create', 'PurchaseController@create');
+
+
 
 /* -----------------------------------------INICIO LLAMADA AJAX/*/
 
