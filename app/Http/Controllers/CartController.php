@@ -26,7 +26,7 @@ class CartController extends Controller
      	//guardo la variable de sesion y la guardo en una variable local
     	$cart = \Session::get('cart');
     	//agrefo propiedad de cantidad y por primera vez la cantidad va a ser uno
-    	$prod->quantity = 1;
+    	// $prod->quantity = 1;
     	//ubico el item en el array en base al slug
     	$cart[$prod->id] = $prod;
     	//actualizo variable de sesion

@@ -465,6 +465,10 @@ p {
 	font-family: 'Montserrat', sans-serif;
 }
 
+.imgView{
+	width: 400px;
+}
+
 /* ------------------------------------------------BUSQUEDA/*/
 
 
@@ -577,5 +581,9 @@ p {
 
 		.categorias
 		{display: block;}
+
+		/* PRODUCTOS */
+
+		.
 
 }

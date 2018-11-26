@@ -29,10 +29,10 @@
             @foreach ($cart as $product)
                 <tr>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->description }}</td>
+                    <td>{{ $product->trademark }}</td>
                     <td>{{ $product->product_code }}</td>
-                    <td>{{ $product->quant }}</td>
                     <td>{{ $product->price }}</td>
+                    <td>{{ $product->quantity }}</td>
                 </tr>
             @endforeach
         </tbody>
