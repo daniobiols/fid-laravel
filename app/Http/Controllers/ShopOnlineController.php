@@ -14,10 +14,6 @@ class ShopOnlineController extends Controller
 {
 	public function show(Request $req)
   	{
-<<<<<<< HEAD
-			$products=Product::whereNotNull('id')->orderBy('name')->paginate(9);
-			return view('products.shopOnline',['products'=>$products]);
-=======
   		$types=Type::all();
 		$categories=Category::all();
 		$subcategories=SubCategory::all();
@@ -42,7 +38,7 @@ class ShopOnlineController extends Controller
 		$products = $products->paginate(5);
 		
 		return view('products.shopOnline',compact(['products', 'types', 'categories', 'subcategories']) );
->>>>>>> f05cb1f6f3763ec850fda759032317d6985ad169
+
   	}
 
   	public function prodView(Product $product)

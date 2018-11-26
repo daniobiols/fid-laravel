@@ -108,7 +108,15 @@
             </form> --}}
           </div>
           <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-            <button type="button" class="btn btn-secondary fidTypo" name="button">Eliminar Cuenta</button>
+                        <td>
+                <form action="/profile/delete/{{$user->id}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger fidTypo">
+                        Eliminar Cuenta
+                    </button>
+                </form>
+            </td>
           </div>
         </div>
       </div>
