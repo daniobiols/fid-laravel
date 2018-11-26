@@ -3,12 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PurcharseDetails extends Model
+class PurchaseDetails extends Model
 {
      use SoftDeletes;
+     protected $table = 'purcharses_detail';
     protected $fillable =
-          ['purchase_id','product_id','quantity', 'unit_price'];
+          ['purcharse_id','product_id','quantity', 'unit_price', 'tax'];
     protected $dates = ['deleted_at'];
 
     public function purchases_detail()

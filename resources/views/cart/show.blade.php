@@ -22,8 +22,8 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->description }}</td>
             <td>{{ $product->product_code }}</td>
-            <td>{{ $product->quant }}</td>
-            <td>{{ $product->price }}</td>
+            <td>${{ $product->price }}</td>
+            <td><input style="width:70px" type="number" name="quantity" value=""></td>
             <td>
                 <form action="/cart/delete/{{$product->id}}" method="post">
                     @method('DELETE')
