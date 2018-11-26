@@ -27,10 +27,8 @@ class CartController extends Controller
     	$cart = \Session::get('cart');
     	//agrefo propiedad de cantidad y por primera vez la cantidad va a ser uno
     	$prod->quantity = 1;
-    	// dd($prod);
     	//ubico el item en el array en base al slug
     	$cart[$prod->id] = $prod;
-    	// dd($cart);
     	//actualizo variable de sesion
     	\Session::put('cart', $cart);
     	return redirect('/cart/show');
@@ -42,7 +40,6 @@ class CartController extends Controller
     	$cart = \Session::get('cart');
     	unset($cart[$id]);
     	\Session::put('cart', $cart);
-
     	return redirect('cart/show');
 
   	}

@@ -11,11 +11,11 @@
 
     <h1 class="col-12 fuente_formulario_usuario" id="id_contacto">Bienvendido {{ $user->name }}</h1>
 
-    <div class="row">
+    <div class="row" style="padding: 10px;">
       <div class="col-4">
-        <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action  active"  activeid="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Datos personales</a>
-          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Datos de Facturacion</a>
+        <div class="list-group fidTypo" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action  active fidTypo"  activeid="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Datos personales</a>
+          {{-- <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Datos de Facturacion</a> --}}
           <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Eliminar cuenta</a>
           <a class="list-group-item list-group-item-action" href="{{ url('/editprofile') }}">Editar Datos</a>
         </div>
@@ -26,37 +26,37 @@
           </div> --}}
           <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item" style="text-align: left;">Email</li>
-              <li class="list-group-item">{{$user->email}}</li>
-              <li class="list-group-item" style="text-align: left;">Nombre</li>
-              <li class="list-group-item">{{$user->name}}</li>
-              <li class="list-group-item" style="text-align: left;">Apellido</li>
-              <li class="list-group-item">{{$user->lastname}}</li>
-              <li class="list-group-item" style="text-align: left;">Telefono</label></li>
-              <li class="list-group-item">{{$user->telephone}}</li>
-              <li class="list-group-item" style="text-align: left;">Address</label></li>
-              <li class="list-group-item">{{$user->address}}</li>
-              <li class="list-group-item" style="text-align: left;">Pais</label></li>
-              <li class="list-group-item">{{$user->country}}</li>
+              <li class="list-group-item fidTypo" style="text-align: left;">Email</li>
+              <li class="list-group-item fidTypo">{{$user->email}}</li>
+              <li class="list-group-item fidTypo" style="text-align: left;">Nombre</li>
+              <li class="list-group-item fidTypo">{{$user->name}}</li>
+              <li class="list-group-item fidTypo" style="text-align: left;">Apellido</li>
+              <li class="list-group-item fidTypo">{{$user->lastname}}</li>
+              <li class="list-group-item fidTypo" style="text-align: left;">Telefono</label></li>
+              <li class="list-group-item fidTypo">{{$user->telephone}}</li>
+              <li class="list-group-item fidTypo" style="text-align: left;">Address</label></li>
+              <li class="list-group-item fidTypo">{{$user->address}}</li>
+              <li class="list-group-item fidTypo" style="text-align: left;">Pais</label></li>
+              <li class="list-group-item fidTypo">{{$user->country}}</li>
             </ul>
           </div>
           <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
             {{-- @include('partials.creditcard') --}}
-            <form class="" action="index.html" method="post">
+{{--             <form class="" action="index.html" method="post">
               <div class="form-group">
-                <label class="col-sm-4 control-label flota_campos" for="card-holder-name">Nombre en la tarjeta</label>
+                <label class="col-sm-4 control-label flota_campos fidTypo" for="card-holder-name">Nombre</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Nombre">
+                  <input type="text" class="form-control fidTypo" name="card-holder-name" id="card-holder-name" placeholder="">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-4 control-label flota_campos" for="card-number">Numero de la tarjeta</label>
+                <label class="col-sm-4 control-label flota_campos fidTypo" for="card-number">Numero</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Numero">
+                  <input type="text" class="form-control fidTypo" name="card-number" id="card-number" placeholder="">
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-4 control-label flota_campos" for="expiry-month">Fecha de vencimiento</label>
+                <label class="col-sm-4 control-label flota_campos fidTypo" for="expiry-month">Vencimiento</label>
                 <div class="col-sm-9">
                   <div class="row">
                     <div class="col-xs-3">
@@ -89,21 +89,26 @@
                         <option value="21">2021</option>
                         <option value="22">2022</option>
                         <option value="23">2023</option>
+                        <option value="13">2024</option>
+                        <option value="14">2025</option>
+                        <option value="15">2025</option>
+                        <option value="16">2027</option>
+                        <option value="17">2028</option>
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-4 control-label flota_campos" for="cvv">Codigo de Seguridad</label>
+                <label class="col-sm-4 control-label flota_campos fidTypo" for="cvv">CVV</label>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV">
+                  <input type="text" class="form-control" name="cvv" id="cvv" placeholder="">
                 </div>
               </div>
-            </form>
+            </form> --}}
           </div>
           <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-            <button type="button" class="btn btn-secondary" name="button">Eliminar Cuenta</button>
+            <button type="button" class="btn btn-secondary fidTypo" name="button">Eliminar Cuenta</button>
           </div>
         </div>
       </div>

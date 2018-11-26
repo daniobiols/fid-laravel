@@ -36,7 +36,7 @@ class ShopOnlineController extends Controller
 		}
 
 		$products = $products->paginate(5);
-
+		
 		return view('products.shopOnline',compact(['products', 'types', 'categories', 'subcategories']) );
   	}
 
