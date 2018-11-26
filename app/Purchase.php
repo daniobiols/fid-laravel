@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Purcharse extends Model
+class Purchase extends Model
 {
     use SoftDeletes;
-    protected $fillable =['user_id','transaction_date','charge'];
+    protected $table = 'purcharses';
+    protected $fillable =['user_id','transaction_date','charge','tax', 'charge'];
     protected $dates = ['deleted_at'];
 
     public function purchases_detail()

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Purchase;
+use App\PurchaseDetails;
+
 
 class PurchaseController extends Controller
 {
@@ -17,12 +19,39 @@ class PurchaseController extends Controller
     {
         $user = \Auth::user();
         $cart = \Session::get('cart');   
-        return Purchase::create([
-            'user_id' => $user['id'],
-            'transaction_date' => $cart['created_at)'],
-            'tax' => 21,
-            'charge' => 1000,
-        ]);
+
+        \DB::beginTransaction();
+        try {
+            $purch = Purchase::create([
+                'user_id' => $user->id,
+                'transaction_date' => date('Y-m-d'),
+                'tax' => 21,
+                'charge' => 1000,
+            ]);
+
+            foreach ($cart as $item) {
+                $detail = PurchaseDetails::create([
+                    'product_id' => $item->id,
+                    'purcharse_id' => $purch->id,
+                    'quantity' => 1,
+                    'tax' => 21,
+                    'unit_price' => $item->price,
+                ]);
+            }
+
+            \DB::commit();
+            $success = true;
+
+        } catch (\Exception $e) {
+            $success = false;
+            \DB::rollback();
+            return redirect('/home');
+        }
+
+        if ($success) {
+            return redirect('/purchase/index');
+        }
+
     }
 
 
@@ -34,7 +63,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //  
     }
 
     /**
